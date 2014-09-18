@@ -1,0 +1,188 @@
+header{
+
+	margin-left:-10px;
+    margin-right:-10px;
+    margin-top:-10px;
+    height:150px;
+    background: #0A2A12;
+    position:relative;
+    min-width: 1100px;
+}
+
+body{
+    height: 900px;
+	background-image: radial-gradient(#37934c, #145f26);
+}
+
+/*--------------------------------- INDEX -----------------------------------*/
+
+#login{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Abel', sans-serif;
+    color: white;
+    padding-top: 120px;
+    position: relative;
+    min-width: 1100px;
+    p{
+        position: center;
+    }
+}
+
+.caixa_inf{
+    border: 0px;
+    padding: 15px;
+    margin: 20px 2px 0 0;
+    font-size: 25px;
+    font-family: 'Abel', sans-serif;
+
+}
+.button_entrar{
+    margin: 20px 0 0 0;
+    border: 0;
+    background: #0A2A12;
+    color: white;
+    font-size: 30px;
+    padding: 8px 40px;
+}
+/*--------------------------------- LOCAIS ----------------------------------*/
+.divs{
+    margin: 0 auto;
+    height: 400px;
+    width: 800px;
+}
+#grao_natural{
+    height: 0px;
+    position:relative;
+    top:50px
+}
+#mundo_verde
+{
+    position:relative;
+    left:500px;
+    height:156px;
+    top:50px;
+}
+#reino_saudavel
+{
+    position: relative;
+    top:100px;
+}
+.local {
+    color: white;
+    position:relative;
+    left:180px;
+    top:-155px;
+    font-size: 19px;
+}
+
+/*------------------------------- LOCAIS/GRAO -------------------------------*/ 
+.grao{
+    margin: 0 auto;
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 400px;
+    width: 1200px;
+}
+#imagem_grao
+{
+    position:relative;
+    top:50px
+}
+#pgrao{
+    color:white;
+
+}
+#textograo{
+    margin: 0 auto;
+    margin-left: 0px;
+    width: 700px;
+    position: relative;
+    left:500px;
+    top:-250px;
+    text-align: justify;
+
+}
+#textgrao{
+    font-size: 25;
+    color: white;
+    position: relative;
+    left:-10px;
+}
+#intro{
+    color:white;
+    position: relative;
+    left:-40;
+    top:30px;
+}
+#endergrao{
+    color:white;
+    position: relative;
+    left:-40;
+    top:70px;
+
+}
+/*--------------------------------- SOBRE -----------------------------------*/
+
+
+#titulo{
+    font-size: 30px;
+    font-family: 'Abel', sans-serif;
+    color: white;
+    text-align: center;
+    padding-top: 120px;
+}
+#tudo{
+    
+    min-width: 1000px;
+}
+#sobre{
+    font-size: 18px;
+    font-family: 'Abel', sans-serif;
+    color: white;
+    margin-left: 270px;
+    margin-top: -140px;
+    max-width: 400px;
+    min-width: 400px;
+}
+#contato{
+    font-size: 18px;
+    font-family: 'Abel', sans-serif;
+    color: white;
+    max-width: 400px;
+    margin-left: 800px;
+    min-width: 400px;
+}
+.nome{
+    font-size: 18px;
+    font-family: 'Abel', sans-serif;
+    color: #0A2A12;
+    padding: 6px 36px 6px 36px;
+}
+.email{
+
+    font-size: 18px;
+    font-family: 'Abel', sans-serif;
+    color: #0A2A12;
+    padding: 6px 36px 6px 36px;
+}
+.enviar{
+    background: #0A2A12;
+    width: 150px;
+    height: 40px;
+    font-size: 28px;
+    font-family: 'Abel', sans-serif;
+    color: white;
+    border: 0;
+    margin-left: 50px;
+    position: relative;
+}
+.comentario{
+    font-size: 18px;
+    font-family: 'Abel', sans-serif;
+    color: #0A2A12;
+    font-style: bold;
+    padding: 36px 34px 36px 34px;
+    max-width: 175px;
+    max-height: 46px;
+}
