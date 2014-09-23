@@ -18,6 +18,8 @@
 	</header>
 	<!-- seção para ser gerada de forma dinâmica -->
 	<div class ="divs">
+
+		<?php echo "Teste"?>
 		<?php
 			$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
 			$result = $db->query('SELECT * FROM locais;') or die('Query db failed');
