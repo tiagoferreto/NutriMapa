@@ -47,10 +47,14 @@ body{
 }
 /*--------------------------------- RECEITAS ----------------------------------*/
 
-.receitas_light_diet{
+.receitas_light{
 
 padding-top: 100px;
+}
+.receitas_light_1{
 
+padding-top: 100px;
+padding-left: 100px;
 }
 /*--------------------------------- LOCAIS ----------------------------------*/
 .local {
