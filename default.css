@@ -47,14 +47,32 @@ body{
 }
 /*--------------------------------- RECEITAS ----------------------------------*/
 
-.receitas_light{
+#receitas_light{
 
-padding-top: 100px;
+    width: 600px;
+    height: 500px;
+    position:relative;
+    left: 100px;
+    top: 20px;
 }
-.receitas_light_1{
-
-padding-top: 100px;
-padding-left: 100px;
+.titulo_receitas{
+    color: white;
+    padding-left: 155px;
+}
+.receitas_left{
+    width: 148px;
+    height: 156px;
+}
+.receitas_right{
+    width: 148px;
+    height: 156px;
+    position:relative;
+    top:-172px;
+    left:200px; 
+}
+.nome_receita{
+    text-align: center;
+    color: white;
 }
 /*--------------------------------- LOCAIS ----------------------------------*/
 
