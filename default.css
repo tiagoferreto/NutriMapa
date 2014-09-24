@@ -74,6 +74,14 @@ body{
     text-align: center;
     color: white;
 }
+/*--------------------------------- RECEITAS ESQUELETO ----------------------------------*/
+    .titulo_rece{
+        font-size: 50px;
+        color: white;
+        position: relative;
+        right: -600px;
+        /*implementar*/
+    }
 /*--------------------------------- LOCAIS ----------------------------------*/
 
 #caixa_locais{
