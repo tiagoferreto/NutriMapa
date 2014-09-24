@@ -57,16 +57,9 @@ padding-top: 100px;
 padding-left: 100px;
 }
 /*--------------------------------- LOCAIS ----------------------------------*/
-.local {
-    color: white;
-    position:relative;
-    left:105px;
-    top:-140px;
-    font-size: 19px;
-}
+
 #caixa_locais{
     width: 700px;
-    margin-top: 100px;
     height: 3300px;
     padding-bottom: 30px;
 
@@ -74,9 +67,9 @@ padding-left: 100px;
 #caixa_restaurantes{
     width: 700px;
     margin-top: 100px;
-    height: 3330px;
+    height: 2000px;
     margin-left: 740px;
-    margin-top: -3227px; 
+    margin-top: -3312px; 
 }
 
 .locais{
@@ -89,26 +82,26 @@ padding-left: 100px;
 
 }
 h3{
-    margin-left: 300px;
-    margin-top: 100px;
-    font-size: 30px;
+    font-size: 50px;
     color: black;
+    margin-left: 300px;
 }
 
 #caixa_restaurantes .locais{
-    border-color: white;
+    border-color: grey;
 }
 #caixa_locais .locais{
     border-color: black;
 }
 #caixa_restaurantes h3{
-    color: white;
+    color: grey;
+    margin-left: 190px;
 }
 .locais p{
     max-width: 190px;
 }
 .top{
-    padding-top: 170px;
+    padding-top: 175px;
 }
 .left{
     padding-left: 365px;
@@ -123,9 +116,8 @@ h3{
 /*------------------------------- RESTAURANTE -------------------------------*/ 
 .local{
     margin: 0 auto;
-    margin-left: -100px;
     margin-right: 50px;
-    margin-top: 150px;
+    margin-top: 50px;
     height: 400px;
     width: 1200px;
 }
