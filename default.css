@@ -47,33 +47,26 @@ body{
 }
 /*--------------------------------- RECEITAS ----------------------------------*/
 
-.caixa_receitas{
-
-    width: 300px;
-    height: 600px;
-    position:relative;
-    margin-top: 100px;
-    margin-left: 50px;
+#caixa{
+    height: 1000px;
+    background-color: blue;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30;
+}
+#light_diet{
+    height: 250px;
+    background-color: yellow;
+    margin-top: 30px;
 }
 .receita{
-    width: 300px;
+    width: 250px;
     height: 200px;
-    background: #0A2A12;
-    margin-top: 20px;
-
+    background-color: white;
+    margin-left: 20px;
+    position: absolute;
+    margin-top: 30px;
 }
- .caixa_receitas .receita p{
-
-    font-size: 15px;
-    color: white;
-    max-width: 250px;
-}
-.caixa_receitas p{
-    margin-left: 50px;
-    font-size: 30px;
-    color: #0A2A12;
-}
-
 /*--------------------------------- RECEITAS ESQUELETO ----------------------------------*/
     .titulo_rece{
         font-size: 50px;
