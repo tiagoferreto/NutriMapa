@@ -68,13 +68,55 @@ body{
     margin-top: 30px;
 }
 /*--------------------------------- RECEITAS ESQUELETO ----------------------------------*/
-    .titulo_rece{
-        font-size: 50px;
-        color: white;
-        position: relative;
-        right: -600px;
-        /*implementar*/
-    }
+/*h1{
+    font-size: 50px;
+    color: white;
+    position: relative;
+    right: -600px;
+    
+}*/
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+p{
+    margin-left: 100px;
+    color: white;
+}
+
+#rece_esque{
+    position: relative;
+    top: 50px;
+}
+
+#rece_info{
+    position: relative;
+    left: 305px;
+    bottom: 288px;
+    width: 700px;
+}
+#rece_tabela{
+    width: 350px;
+    position: fixed;
+    left: 1015px;
+    top: 198px;
+    text-align: center;
+}
+
+h2{
+    color: white;
+    text-align: center;
+}
+
+#ing{
+    font-size: 19px;
+}
+
+
+
+
 /*--------------------------------- LOCAIS ----------------------------------*/
 
 #caixa_locais{
