@@ -68,22 +68,18 @@ body{
     margin-top: 30px;
 }
 /*--------------------------------- RECEITAS ESQUELETO ----------------------------------*/
-/*h1{
-    font-size: 50px;
-    color: white;
-    position: relative;
-    right: -600px;
-    
-}*/
 
 h1{
     text-align: center;
     color: white;
+    font-family: 'Abel', sans-serif;
 }
 
 p{
     margin-left: 100px;
     color: white;
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
 }
 
 #rece_esque{
@@ -93,21 +89,24 @@ p{
 
 #rece_info{
     position: relative;
-    left: 305px;
-    bottom: 288px;
-    width: 700px;
+    left: 405px;
+    bottom: 750px;
+    width: 400px;
+    font-family: 'Abel', sans-serif;
 }
-#rece_tabela{
-    width: 350px;
-    position: fixed;
-    left: 1015px;
-    top: 198px;
-    text-align: center;
+#origem{
+    position: relative;
+    bottom: 1050px;
+    float: right;
+    right: 150px;
+    font-family: 'Abel', sans-serif;
+    color: white;
 }
 
 h2{
     color: white;
     text-align: center;
+    font-family: 'Abel', sans-serif;
 }
 
 #ing{
