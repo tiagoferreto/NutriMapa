@@ -92,7 +92,7 @@ h1{
 }
 
 p{
-    margin-left: 100px;
+    margin-left: 50px;
     color: white;
     font-family: 'Abel', sans-serif;
     font-size: 20px;
@@ -111,12 +111,15 @@ p{
     font-family: 'Abel', sans-serif;
 }
 #origem{
-    position: relative;
-    bottom: 1650px;
-    float: right;
-    right: 200px;
+    position: absolute;
+    bottom: 1450px;
+    left: 1000px;
+    right: 340px;
     font-family: 'Abel', sans-serif;
     color: white;
+    text-align:center;
+    width: 200px;
+    padding-top: 0;
 }
 
 h2{
@@ -127,6 +130,18 @@ h2{
 
 #ing{
     font-size: 19px;
+}
+a:link{
+    color: white;
+}
+a:visited{
+    color: #0A2A12;
+}
+a:hover{
+    color:#0A2A12;
+}
+a:active{
+    color:#0A2A12;
 }
 
 
