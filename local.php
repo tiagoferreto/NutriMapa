@@ -18,19 +18,23 @@
 		<a href="receitas.html"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/claros/Receitas.png"></a>
 	</header>
 	<div class="local">
-
-		<div id="imagem_local">
-			<h1 id="plocal"> Armazém do Mercado </h1><br>
-			<img src="imglojas/armazem_do_mercado.jpg" width ="320" height="267">
-		</div>
-
-		<div id="description">
-			<h2 id="textlocal"> Sem glúten, sem lactose, diet e light </h2>
-			<p id="intro">Entre muitos produtos, trabalhamos com artigos para festas, balões, decorações, embalagens, sacarias, produtos para confeitaria e fabricação de sorvetes, chocolates, produtos naturais, frutas secas e cristalizadas, geleias, doces, produtos coloniais, cereais, farináceos.<br><br></p>
-
-			<p id="address">Mercado Público Central, lojas 01 e 03 - externo;<br>Segunda à Sexta-feira das 07h30 às 19h30; Sábados das 07h30 às 18h30;<br>Tel: (51) 3224.1402<br>(51) 9977.3276<br>Mais informações:
-			<a href="http://www.armazemdomercado.com.br"> Armazém do Mercado<br></p>
-		</div>	
+		<?php
+		$id = $_GET["id"];
+		$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
+		$statement = $db->prepare('SELECT * FROM locais WHERE id = :id;');
+		$statement->bindValue(':id', $id);
+		$result = $statement->execute();
+		$row = $result->fetchArray();
+		echo "<div id=\"imagem_local\">";
+		echo "<h1 id=\"plocal\">{$row['nome']}</h1><br>";
+		echo "<img src=\"imglojas/{$row['imagem']}\" width =\"300\" height=\"267\">";
+		echo "</div>";
+		echo "<div id=\"description\">";
+		echo "<h2 id=\"textlocal\"> {$row['categoria']} </h2>";
+		echo "<p id=\"intro\">“{$row['descricao']}”<br><br><br></p>";
+		echo "<p id=\"address\">{$row['endereco']}</p>";
+		echo "</div>";
+		?>
 	</div>
 
 </body>
