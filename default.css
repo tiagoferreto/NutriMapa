@@ -97,9 +97,16 @@ p{
     font-size: 20px;
 }
 
+
+
 #rece_esque{
     position: relative;
     top: 50px;
+    height: 1200px;
+}
+
+#rece_tab{
+    padding-top: 80px;
 }
 
 #rece_info{
@@ -110,15 +117,19 @@ p{
     font-family: 'Abel', sans-serif;
 }
 #origem{
-    position: absolute;
-    bottom: 1450px;
-    left: 1000px;
-    right: 340px;
-    font-family: 'Abel', sans-serif;
+    text-align: center;
     color: white;
-    text-align:center;
-    width: 200px;
-    padding-top: 0;
+}
+
+#rece_img{
+    width: 300px;
+    position: relative;
+    height: 200px;
+    bottom: 120px;
+    top: 20px;
+}
+#ohref{
+    text-align: center;
 }
 
 h2{
