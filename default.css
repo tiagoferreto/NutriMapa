@@ -122,7 +122,7 @@ p{
 }
 
 #rece_img{
-    width: 300px;
+    width: 400px;
     position: relative;
     height: 200px;
     bottom: 120px;
@@ -216,6 +216,9 @@ h3{
     position: relative;
 }
 /*------------------------------- RESTAURANTE -------------------------------*/ 
+p{
+    text-align: center;
+}
 .local{
     margin: 0 auto;
     margin-right: 50px;
