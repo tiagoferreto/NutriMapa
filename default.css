@@ -216,9 +216,7 @@ h3{
     position: relative;
 }
 /*------------------------------- RESTAURANTE -------------------------------*/ 
-p{
-    text-align: center;
-}
+
 .local{
     margin: 0 auto;
     margin-right: 50px;
@@ -234,6 +232,7 @@ p{
 #plocal{
     color:white;
     margin-left: 450px;    
+    text-align: center;
 
 }
 #description{
