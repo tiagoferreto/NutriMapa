@@ -332,3 +332,42 @@ h3{
     max-width: 175px;
     max-height: 46px;
 }
+
+/*--------------------------------- MAPA -----------------------------------*/
+
+#googleMap{
+    position: relative;
+    left: 260px;
+    
+
+}
+
+#pesquisa{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Abel', sans-serif;
+    color: white;
+
+    position: relative;
+    min-width: 1100px;
+    p{
+        position: center;
+    }
+}
+
+.caixa{
+    border: 0px;
+    padding: 15px;
+    margin: 20px 2px 0 0;
+    font-size: 25px;
+    font-family: 'Abel', sans-serif;
+
+}
+.button_entrar2{
+    margin: 20px 0 0 0;
+    border: 0;
+    background: #0A2A12;
+    color: white;
+    font-size: 30px;
+    padding: 8px 40px;
+}
