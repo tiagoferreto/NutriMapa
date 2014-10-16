@@ -228,6 +228,7 @@ h3{
 {
     position:relative;
     top:50px
+    max-height: 400px;
 }
 #plocal{
     color:white;
@@ -301,6 +302,7 @@ h3{
     padding: 36px 34px 36px 34px;
     max-width: 175px;
     max-height: 46px;
+    position: relative;
 }
 /*--------------------------------- SOBRE -----------------------------------*/
 
