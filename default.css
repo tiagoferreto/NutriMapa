@@ -338,10 +338,12 @@ h3{
 #googleMap{
     position: relative;
     left: 170px;
-    top: -240px;
+    top: -315px;
     right: 35px;
     margin: 0;
+    width:1200px;
     
+    margin-left: 400px;
 
 }
 
@@ -353,6 +355,11 @@ h3{
     margin: 0;
     left: 50px;
     position: relative;
+}
+#mapa{
+    top: 170px;
+    position: relative;
+    left: 5px;
 }
 .caixa{
     border: 0px;
