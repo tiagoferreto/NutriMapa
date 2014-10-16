@@ -42,15 +42,15 @@ document.onkeydown=enter; //Para o navegador reconhecer o comando da tecla 'ente
 </header>
 
 <div id="pesquisa">
-    <p>Digite o nome do estabelecimento</p>
+    <p id="pbusca">Digite o nome do estabelecimento</p>
     <form name=pesquisa>
-    <input type=text class="caixa" name=caixadigi placeholder="Digite aqui"></br>
-    <input type=button class="button_entrar2" value="Entrar" onClick="Login()"></br>
+    <input type=text class="caixainput" name=caixadigi placeholder=" Digite aqui">
+    <input type=button class="botaobusca" value="Busca" onClick="Busca()">
     </form>
 
 
 </div>
-<div id="mapa" style="height: 455px; width: 1400px">
+<div id="mapa" style="height: 600px; width: 1400px">
         </div>
     
     <script src="js/jquery.min.js"></script>

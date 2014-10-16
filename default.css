@@ -353,7 +353,7 @@ h3{
 #googleMap{
     position: relative;
     left: 170px;
-    top: -315px;
+    top: -415px;
     right: 35px;
     margin: 0;
     width:1200px;
@@ -363,34 +363,50 @@ h3{
 }
 
 #pesquisa{
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'Abel', sans-serif;
     color: white;
     padding: 30px 0 -200px 75px;
     margin: 0;
-    left: 50px;
+    left: 10px;
     position: relative;
+    text-align: left;
+}
+#pbusca{
+    font-size: 40px;
+    font-family: 'Abel', sans-serif;
+    color: white;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
 }
 #mapa{
-    top: 100px;
+    top: -15px;
     position: relative;
     left: 5px;
 }
-.caixa{
+.caixainput{
     border: 0px;
     padding: 0;
     margin: 20px 2px 0 0;
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Abel', sans-serif;
+    left: 100px;
+    top: -40px;
+    height: 25px;
 
 }
-.button_entrar2{
+.botaobusca{
     margin: 20px 0 0 0;
     border: 0;
     background: #0A2A12;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     padding: 0;
+    height: 25px;
+    top: 3px;
+    position: relative;
 }
 
 .infoBox { 
