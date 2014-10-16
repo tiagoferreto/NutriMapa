@@ -266,38 +266,8 @@ h3{
     position: relative;
     left:-40;
     top:70px;
+    padding-bottom: 0;
 
-}
-/*--------------------------------- SOBRE -----------------------------------*/
-
-
-#titulo{
-    font-size: 30px;
-    font-family: 'Abel', sans-serif;
-    color: white;
-    text-align: center;
-    padding-top: 120px;
-}
-#tudo{
-    
-    min-width: 1000px;
-}
-#sobre{
-    font-size: 18px;
-    font-family: 'Abel', sans-serif;
-    color: white;
-    margin-left: 270px;
-    margin-top: -140px;
-    max-width: 400px;
-    min-width: 400px;
-}
-#contato{
-    font-size: 18px;
-    font-family: 'Abel', sans-serif;
-    color: white;
-    max-width: 400px;
-    margin-left: 800px;
-    min-width: 400px;
 }
 .nome{
     font-size: 18px;
@@ -332,6 +302,38 @@ h3{
     max-width: 175px;
     max-height: 46px;
 }
+/*--------------------------------- SOBRE -----------------------------------*/
+
+
+#titulo{
+    font-size: 30px;
+    font-family: 'Abel', sans-serif;
+    color: white;
+    text-align: center;
+    padding-top: 120px;
+}
+#tudo{
+    
+    min-width: 1000px;
+}
+#sobre{
+    font-size: 18px;
+    font-family: 'Abel', sans-serif;
+    color: white;
+    margin-left: 270px;
+    margin-top: -140px;
+    max-width: 400px;
+    min-width: 400px;
+}
+#contato{
+    font-size: 18px;
+    font-family: 'Abel', sans-serif;
+    color: white;
+    max-width: 400px;
+    margin-left: 800px;
+    min-width: 400px;
+}
+
 
 /*--------------------------------- MAPA -----------------------------------*/
 
@@ -351,19 +353,19 @@ h3{
     font-size: 30px;
     font-family: 'Abel', sans-serif;
     color: white;
-    padding: 30px 0 0 75px;
+    padding: 30px 0 -200px 75px;
     margin: 0;
     left: 50px;
     position: relative;
 }
 #mapa{
-    top: 170px;
+    top: 100px;
     position: relative;
     left: 5px;
 }
 .caixa{
     border: 0px;
-    padding: 15px;
+    padding: 0;
     margin: 20px 2px 0 0;
     font-size: 25px;
     font-family: 'Abel', sans-serif;
@@ -375,7 +377,7 @@ h3{
     background: #0A2A12;
     color: white;
     font-size: 30px;
-    padding: 8px 40px;
+    padding: 0;
 }
 
 .infoBox { 
@@ -389,7 +391,7 @@ h3{
     color: black;
 }
 .infoBox p { 
-    padding: 0 15px; 
+    padding: 0; 
     color:black;
 }
 .infoBox:before { 
