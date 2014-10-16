@@ -303,6 +303,17 @@ h3{
     max-width: 175px;
     max-height: 46px;
     position: relative;
+    top: -600px;
+}
+.caixacomment{
+    font-size: 18px;
+    font-family: 'Abel', sans-serif;
+    color: #0A2A12;
+    font-style: bold;
+    padding: 36px 34px 36px 34px;
+    max-width: 175px;
+    max-height: 46px;
+    position: relative;
 }
 /*--------------------------------- SOBRE -----------------------------------*/
 
