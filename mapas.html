@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <link href="default.css" rel="stylesheet" type="text/css" media="all">
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCVJqGdm03cFzk8Ea6Cl_EFKRFD8nIHa2U&amp;sensor=false">
-</script>
+
 <title>
         NutriMapa
     </title>
@@ -29,6 +28,80 @@ document.onkeydown=enter; //Para o navegador reconhecer o comando da tecla 'ente
         }
     }
 </script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCVJqGdm03cFzk8Ea6Cl_EFKRFD8nIHa2U&amp;sensor=false">
+</script>
+<script>
+function initialize()
+{
+var mapProp = {
+  center:new google.maps.LatLng(-30.034971, -51.209816),
+  zoom:13,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+var map=new google.maps.Map(document.getElementById("googleMap")
+  ,mapProp);
+
+var banca13=new google.maps.Marker({
+  position:new google.maps.LatLng(-30.027599, -51.227888),
+  icon:'carrot_cartoonII.png'
+  });
+
+banca13.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+  content:"Banca 13!"
+  });
+
+google.maps.event.addListener(banca13, 'click', function() {
+  infowindow.open(map,banca13);
+  });
+
+var aloe=new google.maps.Marker({
+    position:new google.maps.LatLng(-30.034971, -51.209816),
+    icon:'carrot_cartoonII.png'
+    });
+aloe.setMap(map);
+
+var infowindow1 = new google.maps.InfoWindow({
+  content:"Aloe Vita!"
+  });
+
+google.maps.event.addListener(aloe, 'click', function() {
+  infowindow1.open(map,aloe);
+  });
+
+var alecrim=new google.maps.Marker({
+    position:new google.maps.LatLng(-30.028120, -51.169523),
+    icon:'carrot_cartoonII.png'
+    });
+alecrim.setMap(map);
+
+var infowindow2 = new google.maps.InfoWindow({
+  content:"Alecrim Sabor & Saúde!"
+  });
+
+google.maps.event.addListener(alecrim, 'click', function() {
+  infowindow2.open(map,alecrim);
+  });
+
+var bistrogarni=new google.maps.Marker({
+    position:new google.maps.LatLng(-30.031493, -51.209782),
+    icon:'carrot_cartoonII.png'
+    });
+bistrogarni.setMap(map);
+
+var infowindow3 = new google.maps.InfoWindow({
+  content:"Bistro Garni!"
+  });
+
+google.maps.event.addListener(bistrogarni, 'click', function() {
+  infowindow3.open(map,bistrogarni);
+  });
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 </head>
 
 <body>
@@ -50,26 +123,8 @@ document.onkeydown=enter; //Para o navegador reconhecer o comando da tecla 'ente
 
 
 </div>
-<div id="mapa" style="height: 600px; width: 1400px">
-        </div>
-    
-    <script src="js/jquery.min.js"></script>
- 
-        <!-- Maps API Javascript -->
-        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCVJqGdm03cFzk8Ea6Cl_EFKRFD8nIHa2U&amp;sensor=false"></script>
-        
-        <!-- Caixa de informação -->
-        <script src="js/infobox.js"></script>
-    
-        <!-- Agrupamento dos marcadores -->
-    <script src="js/markerclusterer.js"></script>
- 
-        <!-- Arquivo de inicialização do mapa -->
-    <script src="js/mapa.js"></script>
+<div id="googleMap" style="width:1250px;height:600px;"></div>
 
 
-
-
-</div>
 </body>
 </html> 
