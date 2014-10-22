@@ -333,10 +333,11 @@ h3{
     font-size: 18px;
     font-family: 'Abel', sans-serif;
     color: white;
-    margin-left: 270px;
+    margin-left: 190px;
     margin-top: -140px;
-    max-width: 400px;
+    max-width: 450px;
     min-width: 400px;
+    text-align: center;
 }
 #contato{
     font-size: 18px;
@@ -345,6 +346,7 @@ h3{
     max-width: 400px;
     margin-left: 800px;
     min-width: 400px;
+    text-align: center;
 }
 
 
@@ -373,6 +375,7 @@ h3{
     padding: 0;
     margin: 0;
     margin-top: 5px;
+    
 }
 #mapa{
     top: -15px;
