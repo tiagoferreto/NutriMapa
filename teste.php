@@ -38,13 +38,9 @@ document.onkeydown=enter; //Para o navegador reconhecer o comando da tecla 'ente
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-  $result = mysqli_query($con,"SELECT * FROM locais WHERE 1");
+  $result = mysqli_query($con,"SELECT * FROM locais");
 
-  while($row = mysqli_fetch_array($result)) {
-    echo $row['id'] . " " . $row['lat'] . " " . $row['lng'] . " " . $row['name'];
-    echo "<br>";
-  }
-
+  while($row = mysqli_fetch_array($result)):
 ?>
 
 <script>
@@ -58,61 +54,18 @@ var mapProp = {
 var map=new google.maps.Map(document.getElementById("googleMap")
   ,mapProp);
 
-var banca13=new google.maps.Marker({
-  position:new google.maps.LatLng(-30.027599, -51.227888),
-  icon:'carrot_cartoonII.png'
+var marker=new google.maps.Marker({
+  position:new google.maps.LatLng(<?= $row['lat']?>,<?= $row['lng']?>),
   });
 
-banca13.setMap(map);
+marker.setMap(map);
 
 var infowindow = new google.maps.InfoWindow({
-  content:"Banca 13!"
+  content:"<?=$row['name']?>"
   });
 
-google.maps.event.addListener(banca13, 'click', function() {
-  infowindow.open(map,banca13);
-  });
-
-var aloe=new google.maps.Marker({
-    position:new google.maps.LatLng(-30.034971, -51.209816),
-    icon:'carrot_cartoonII.png'
-    });
-aloe.setMap(map);
-
-var infowindow1 = new google.maps.InfoWindow({
-  content:"Aloe Vita!"
-  });
-
-google.maps.event.addListener(aloe, 'click', function() {
-  infowindow1.open(map,aloe);
-  });
-
-var alecrim=new google.maps.Marker({
-    position:new google.maps.LatLng(-30.028120, -51.169523),
-    icon:'carrot_cartoonII.png'
-    });
-alecrim.setMap(map);
-
-var infowindow2 = new google.maps.InfoWindow({
-  content:"Alecrim Sabor & Saúde!"
-  });
-
-google.maps.event.addListener(alecrim, 'click', function() {
-  infowindow2.open(map,alecrim);
-  });
-
-var bistrogarni=new google.maps.Marker({
-    position:new google.maps.LatLng(-30.031493, -51.209782),
-    icon:'carrot_cartoonII.png'
-    });
-bistrogarni.setMap(map);
-
-var infowindow3 = new google.maps.InfoWindow({
-  content:"Bistro Garni!"
-  });
-
-google.maps.event.addListener(bistrogarni, 'click', function() {
-  infowindow3.open(map,bistrogarni);
+google.maps.event.addListener(marker, 'click', function() {
+  infowindow.open(map,marker);
   });
 
 }
@@ -120,6 +73,8 @@ google.maps.event.addListener(bistrogarni, 'click', function() {
 google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
+
+<?php endwhile; ?>
 </head>
 
 <body>
