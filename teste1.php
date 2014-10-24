@@ -11,17 +11,18 @@
     </title>
 
 <script language="JavaScript">
-
+<?php
+    $con=mysqli_connect("nutrimapa.sqlite");
+  // Check connection
+  if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+?>
 document.onkeydown=enter; //Para o navegador reconhecer o comando da tecla 'enter'
     function Login(){ // Função que efetua o login
         var concluido=false;    
         var caixadigi=document.pesquisa.caixadigi.value; //Vai NESTE documento (document), na form de name "Login", no input de name "username" e "password" e pega o valor deles (value);
         caixadigi=caixadigi.toLowerCase(); //toLowerCase() = transforma as letras, se existentes, do valor em minúsculas; 
-        if (caixadigi=="nutrimapa") { 
-            map.setZoom(9);
-            map.setCenter(banca13.getPosition());
-            } //window.location = envia para  outra página.
-        if (concluido==false) { alert("Estabelecimento nao encontrado"); }
     }
      function enter(){
         if (event.keyCode == 13){ //Se o usuário teclar o botão 'Enter' (de código '13'), executa a função Login();
@@ -43,35 +44,47 @@ var mapProp = {
   };
 var map=new google.maps.Map(document.getElementById("googleMap")
   ,mapProp);
-}
-initialize();
 
-function carregarPontos()
-{
+<?php
+  
+  $inserido=$inserido2=$inserido3=$inserido4="";
+  if (isset($_POST['checkbox1'])) {
+      if ($_POST['checkbox1']){
+      $inserido=$_POST['checkbox1'];
+      $sql = "SELECT * FROM locais WHERE teste=$inserido";
+    }
+   }
+   else{
+    $sql = "SELECT * FROM locais";
+   }
+  $result = mysqli_query($con,$sql);
 
-var marker=new google.maps.Marker({
+  while($row = mysqli_fetch_assoc($result)):
+?>
+
+var marker<?= $row['id']?>=new google.maps.Marker({
   position:new google.maps.LatLng(<?= $row['lat']?>,<?= $row['lng']?>),
   });
 
-marker.setMap(map);
+marker<?= $row['id']?>.setMap(map);
 
-var infowindow = new google.maps.InfoWindow({
+var infowindow<?= $row['id']?> = new google.maps.InfoWindow({
   content:"<?=$row['name']?>"
   });
-
-google.maps.event.addListener(marker, 'click', function() {
-  infowindow.open(map,marker);
+google.maps.event.addListener(marker<?= $row['id']?>, 'click', function() {
+  infowindow<?= $row['id']?>.open(map,marker<?= $row['id']?>);
   });
 
-}
-}
+<?php endwhile; ?>
 
-carregarPontos();
+}
 google.maps.event.addDomListener(window, 'load', initialize);
+
+
 
 </script>
 
-<?php endwhile; ?>
+
 </head>
 
 <body>
@@ -84,16 +97,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <a href="receitas.html"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/claros/Receitas.png"></a>
 </header>
 
-<div id="pesquisa">
-    <p id="pbusca">Digite o nome do estabelecimento</p>
-    <form name=pesquisa>
-    <input type=text class="caixainput" name=caixadigi placeholder=" Digite aqui">
-    <input type=button class="botaobusca" value="Busca" onClick="Busca()">
-    </form>
+<form action="" method="post">
+<label>Teste1: <input type="checkbox" value="1"  name="checkbox1"></input></label>
+<label>Teste2: <input type="checkbox" value="1"  name="n1"></input></label>
+<label>Teste3: <input type="checkbox" value="1"  name="n2"></input></label>
+<label>Teste4: <input type="checkbox" value="1"  name="n3"></input></label>
+ 
+ 
+<label><input type="submit" name="ok" value="Ok" /></label>
+</form>
 
 
-</div>
 <div id="googleMap" style="width:1400px;height:600px;"></div>
+
 
 
 </body>
