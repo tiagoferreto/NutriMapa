@@ -22,14 +22,14 @@
 
 		<?php echo "Teste"?>
 		<?php
-	/*		$db = new SQLite3('nutrimapa.sqlite') or echo 'Unable to open database';
+			$db = new SQLite3('nutrimapa.sqlite') or echo 'Unable to open database';
 	
 			$result = $db->query('SELECT * FROM locais;') or die('Query db failed');
 			while ($row = $result->fetchArray())
 			{
 				echo "<a href=\"{$row['pagina']}\"><img src=\"icones/locais/{$row['icone']}\" width =\"148\" height=\"156\"></a>";
 				echo "<p class = \"local\">{$row['nome']}</p>";				
-			}*/
+			}
 		?>
 
 <!--
