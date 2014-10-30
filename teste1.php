@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+<?php
+		$db = new SQLite3('nutrimapa.sqlite') or echo 'Unable to open database';
+	
+			$result = $db->query('SELECT * FROM enderecos;') or die('Query db failed');
+echo "certo";
+			
+		?>
+=======
 <DOCTYPE! hmtl>
 
 <html lang="PT-BR">
@@ -114,3 +123,4 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 </body>
 </html> 
+>>>>>>> 270a4e1b448c0ee8633c4b2cb1b80373ab05a726
