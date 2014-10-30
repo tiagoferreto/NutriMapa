@@ -192,11 +192,19 @@ h3{
     border-color: grey;
 }
 #caixa_locais .locais{
-    border-color: black;
+    border-color: white;
 }
 #caixa_restaurantes h3{
     color: grey;
     margin-left: 190px;
+    
+    
+}
+#caixa_restaurantes{
+    padding-top: 0;
+    margin-top: 0;
+    top: -3310px;
+    position: relative;
 }
 .locais p{
     max-width: 140px;
@@ -251,6 +259,7 @@ h3{
     color: white;
     position: relative;
     left:-10px;
+    text-align: center;
 }
 #intro{
     color:white;
