@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"/home/guga581/NutriMapa","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/guga581/NutriMapa","disabled":false}}}
-=======
-{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"C:/Users/Joao Fanti/Documents/GitHub/NutriMapa","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/Joao Fanti/Documents/GitHub/NutriMapa","disabled":false}}}
->>>>>>> dd604e8a5066002ea99265576f90fbc075008458
+{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"C:/Users/Felipe Angnes/Documents/GitHub/NutriMapa","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/Felipe Angnes/Documents/GitHub/NutriMapa","disabled":false}}}
