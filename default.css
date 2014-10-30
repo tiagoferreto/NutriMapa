@@ -192,11 +192,19 @@ h3{
     border-color: grey;
 }
 #caixa_locais .locais{
-    border-color: black;
+    border-color: white;
 }
 #caixa_restaurantes h3{
     color: grey;
     margin-left: 190px;
+    
+    
+}
+#caixa_restaurantes{
+    padding-top: 0;
+    margin-top: 0;
+    top: -3310px;
+    position: relative;
 }
 .locais p{
     max-width: 140px;
@@ -251,6 +259,7 @@ h3{
     color: white;
     position: relative;
     left:-10px;
+    text-align: center;
 }
 #intro{
     color:white;
@@ -284,37 +293,38 @@ h3{
     padding: 6px 36px 6px 36px;
 }
 .enviar{
-    background: #0A2A12;
-    width: 150px;
-    height: 40px;
+    top: 220px;
+    margin-left: 983px;
     font-size: 28px;
     font-family: 'Abel', sans-serif;
     color: white;
-    border: 0;
-    margin-left: 50px;
+    border: 0;    
     position: relative;
 }
 .comentario{
-    font-size: 18px;
+    font-size: 35px;
     font-family: 'Abel', sans-serif;
-    color: #0A2A12;
-    font-style: bold;
+    color: white;    
     padding: 36px 34px 36px 34px;
     max-width: 175px;
     max-height: 46px;
     position: relative;
-    top: -600px;
+    top: 400px;
+    margin: 0 auto;
 }
-.caixacomment{
-    font-size: 18px;
+.caixacomment{    
     font-family: 'Abel', sans-serif;
     color: #0A2A12;
-    font-style: bold;
-    padding: 36px 34px 36px 34px;
-    max-width: 175px;
-    max-height: 46px;
+    font-style: bold;    
+    padding: 100px 400px 0px 34px;
+    width: 200px;
+    height: 100px;
     position: relative;
+    top: 300px;
+    margin: 0 auto;
+    margin-bottom: 300px;
 }
+
 /*--------------------------------- SOBRE -----------------------------------*/
 
 

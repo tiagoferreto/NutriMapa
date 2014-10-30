@@ -17,24 +17,12 @@
 		<a href="mapas.html"><img align="right" style="margin-top:38px;margin-right:40px" src="icones/claros/Mapa.png"></a>
 		<a href="receitas.html"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/claros/Receitas.png"></a>
 	</header>
-	<div class="local">
-
-		<div id="imagem_local">
-			<h1 id="plocal"> Congelados Light </h1><br>
-			<img src="imglojas/congelados-light.png" width ="300" height="267">
-		</div>
-
-		<div id="description">
-			<h2 id="textlocal"> Descrição </h2>
-			<p id="intro">
-A BioLight foi fundada em 1989 com a missão de facilitar a vida das pessoas preocupadas com a alimentação saudável. 
-Inicialmente confeccionava somente refeições congeladas “para levar”. Com a demanda das refeições e solicitação dos clientes, a BioLight inaugurou o seu restaurante nos dois anos seguintes.<br><br></p>
-
-
-			<p id="address">Av.Jacuí, 903 / Casa 8 - Cristal;<br>Segunda a Sexta, das 08:00 às 18:00;<br>Tel: (51) 9903-7919<br>Mais informações:
-			<a href="http://www.deboravargas.com/index.php?pagina=inicial"> Congelados Light<br></p>
-		</div>	
-	</div>
+	
+<?php
+setcookie ('$nome', '$idade', '$senha');
+echo $_COOKIE['$nome'];
+echo "oi guuuuuuuu";
+?>
 
 </body>
 </html>
