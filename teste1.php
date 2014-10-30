@@ -11,13 +11,7 @@
     </title>
 
 <script language="JavaScript">
-<?php
-    $con=mysqli_connect("nutrimapa.sqlite");
-  // Check connection
-  if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-?>
+
 document.onkeydown=enter; //Para o navegador reconhecer o comando da tecla 'enter'
     function Login(){ // Função que efetua o login
         var concluido=false;    
@@ -35,6 +29,12 @@ document.onkeydown=enter; //Para o navegador reconhecer o comando da tecla 'ente
 
 
 <script>
+<?php
+$db = new SQLite3('nutrimapa.sqlite') or echo 'Unable to open database';
+  
+      $result = $db->query('SELECT * FROM locais;') or die('Query db failed');
+      
+?>
 function initialize()
 {
 var mapProp = {
