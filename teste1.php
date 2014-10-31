@@ -9,7 +9,6 @@
 <title>
         NutriMapa
     </title>
-
 <script language="JavaScript">
 
 document.onkeydown=enter; //Para o navegador reconhecer o comando da tecla 'enter'
@@ -24,65 +23,8 @@ document.onkeydown=enter; //Para o navegador reconhecer o comando da tecla 'ente
         }
     }
 </script>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCVJqGdm03cFzk8Ea6Cl_EFKRFD8nIHa2U&amp;sensor=false">
-</script>
 
 
-<script>
-<?php
-$db = new SQLite3('nutrimapa.sqlite') or echo 'Unable to open database';
-  
-      $result = $db->query('SELECT * FROM enderecos;') or die('Query db failed');
-      
-?>
-function initialize()
-{
-var mapProp = {
-  center:new google.maps.LatLng(-30.034971, -51.209816),
-  zoom:13,
-  mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-var map=new google.maps.Map(document.getElementById("googleMap")
-  ,mapProp);
-/*
-<?php
-  
-  $inserido=$inserido2=$inserido3=$inserido4="";
-  if (isset($_POST['checkbox1'])) {
-      if ($_POST['checkbox1']){
-      $inserido=$_POST['checkbox1'];
-      $sql = "SELECT * FROM locais WHERE teste=$inserido";
-    }
-   }
-   else{
-    $sql = "SELECT * FROM locais";
-   }
-  $result = mysqli_query($con,$sql);
-
-  while($row = mysqli_fetch_assoc($result)):
-?>
-*/
-var marker<?= $row['id']?>=new google.maps.Marker({
-  position:new google.maps.LatLng(<?= $row['lat']?>,<?= $row['lng']?>),
-  });
-
-marker<?= $row['id']?>.setMap(map);
-
-var infowindow<?= $row['id']?> = new google.maps.InfoWindow({
-  content:"<?=$row['name']?>"
-  });
-google.maps.event.addListener(marker<?= $row['id']?>, 'click', function() {
-  infowindow<?= $row['id']?>.open(map,marker<?= $row['id']?>);
-  });
-
-<?php endwhile; ?>
-
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-
-
-
-</script>
 
 
 </head>
@@ -97,6 +39,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <a href="receitas.html"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/claros/Receitas.png"></a>
 </header>
 
+
+
 <form action="" method="post">
 <label>Teste1: <input type="checkbox" value="1"  name="checkbox1"></input></label>
 <label>Teste2: <input type="checkbox" value="1"  name="n1"></input></label>
@@ -107,10 +51,51 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <label><input type="submit" name="ok" value="Ok" /></label>
 </form>
 
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCVJqGdm03cFzk8Ea6Cl_EFKRFD8nIHa2U&amp;sensor=false">
+</script>
+
+
+<script>
+
+function initialize()
+{
+var mapProp = {
+  center:new google.maps.LatLng(-30.034971, -51.209816),
+  zoom:13,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+var map=new google.maps.Map(document.getElementById("googleMap")
+  ,mapProp);
+}
+
+function pegardoBanco(lat,lng)
+{
+var marker=new google.maps.Marker({
+  position:new google.maps.LatLng(lat,lng),
+  });
+
+marker.setMap(map);
+}
+<?php
+  $db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
+  
+      $result = $db->query('SELECT latitude,longitude FROM enderecos;') or die('Query db failed');
+      while ($row = $result->fetchArray())
+      {
+        
+         $lat=$row['latitude'];
+         $lon=$row['longitude'];
+         echo "<script>pegardoBanco('$lat, $lon')</script>";
+      }
+
+?>
+
+google.maps.event.addDomListener(window, 'load', initialize); 
+
+</script>
+
 
 <div id="googleMap" style="width:1400px;height:600px;"></div>
-
-
 
 </body>
 </html> 
