@@ -1,4 +1,15 @@
 <DOCTYPE! hmtl>
+
+<?php
+$nome = 'Joao Fanti';
+setcookie ('teste', $nome);
+
+session_start();
+$_SESSION['usuario'] = 'Joao Fanti';
+$_SESSION['idade'] = '19';
+$_SESSION['senha'] = '12345';
+?>
+
 <html lang="PT-BR">
 <head>
 <meta charset="UTF-8">
@@ -17,12 +28,18 @@
 		<a href="mapas.html"><img align="right" style="margin-top:38px;margin-right:40px" src="icones/claros/Mapa.png"></a>
 		<a href="receitas.html"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/claros/Receitas.png"></a>
 	</header>
-	
-<?php
-setcookie ('$nome', '$idade', '$senha');
-echo $_COOKIE['$nome'];
-echo "oi guuuuuuuu";
-?>
+	<div>
+		<p style = "margin-top: 300px;">
+			<?php
+			echo $_SESSION['usuario'];
+			echo nl2br("\n");
+			echo $_SESSION['idade'];
+			echo nl2br("\n");
+			echo $_SESSION['senha'];
+			?>
+		</p>
+
+	</div>
 
 </body>
 </html>
