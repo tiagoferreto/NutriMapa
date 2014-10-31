@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-<?php
-		$db = new SQLite3('nutrimapa.sqlite') or echo 'Unable to open database';
-	
-			$result = $db->query('SELECT * FROM enderecos;') or die('Query db failed');
-echo "certo";
-			
-		?>
-=======
 <DOCTYPE! hmtl>
 
 <html lang="PT-BR">
@@ -41,7 +32,7 @@ document.onkeydown=enter; //Para o navegador reconhecer o comando da tecla 'ente
 <?php
 $db = new SQLite3('nutrimapa.sqlite') or echo 'Unable to open database';
   
-      $result = $db->query('SELECT * FROM locais;') or die('Query db failed');
+      $result = $db->query('SELECT * FROM enderecos;') or die('Query db failed');
       
 ?>
 function initialize()
@@ -53,7 +44,7 @@ var mapProp = {
   };
 var map=new google.maps.Map(document.getElementById("googleMap")
   ,mapProp);
-
+/*
 <?php
   
   $inserido=$inserido2=$inserido3=$inserido4="";
@@ -70,7 +61,7 @@ var map=new google.maps.Map(document.getElementById("googleMap")
 
   while($row = mysqli_fetch_assoc($result)):
 ?>
-
+*/
 var marker<?= $row['id']?>=new google.maps.Marker({
   position:new google.maps.LatLng(<?= $row['lat']?>,<?= $row['lng']?>),
   });
@@ -123,4 +114,4 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 </body>
 </html> 
->>>>>>> 270a4e1b448c0ee8633c4b2cb1b80373ab05a726
+
