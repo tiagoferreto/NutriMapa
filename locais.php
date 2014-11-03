@@ -27,27 +27,29 @@
 			$top = TRUE;
 			$pos = "top";
 			$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
+
 	
 			$result = $db->query('SELECT * FROM locais;') or die('Query db failed');
+			//$loja = $db->query('SELECT * FROM locais WHERE loja=1') or die('Query db failed2');
 			while ($row = $result->fetchArray())
-			{
-				if($top) {
-					$pos = "top";
-				}else {
-					$pos = "left";
-				}
-				
-				echo "<div class= \"{$pos}\">\n";
-				echo "<div class =\"locais\">\n";
-				
-				echo "<a href=\"local.php?id={$row['id']}\"><img src=\"imglojas/{$row['imagem']}\" width=\"148\" height=\"156\"></a>\n";
-				echo "<p class = \"nome_local\">{$row['nome']}</p>\n";
-				
-				echo "</div>\n";
-				echo "</div>\n";
-				//echo "<a href=\"{$row['pagina']}\"><img src=\"icones/locais/{$row['icone']}\" width =\"148\" height=\"156\"></a>";
-				//echo "<p class = \"local\">{$row['nome']}</p>";				
-				$top = !($top);
+			{	
+					if($top) {
+						$pos = "top";
+					}else {
+						$pos = "left";
+					}
+					
+					echo "<div class= \"{$pos}\">\n";
+					echo "<div class =\"locais\">\n";
+					
+					echo "<a href=\"local.php?id={$row['id']}\"><img src=\"imglojas/{$row['imagem']}\" width=\"148\" height=\"156\"></a>\n";
+					echo "<p class = \"nome_local\">{$row['nome']}</p>\n";
+					
+					echo "</div>\n";
+					echo "</div>\n";
+					//echo "<a href=\"{$row['pagina']}\"><img src=\"icones/locais/{$row['icone']}\" width =\"148\" height=\"156\"></a>";
+					//echo "<p class = \"local\">{$row['nome']}</p>";				
+					$top = !($top);
 			}
 		?>
 	</div>	
