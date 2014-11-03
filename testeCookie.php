@@ -1,4 +1,15 @@
 <DOCTYPE! hmtl>
+
+<?php
+$nutrimapa_db = new SQLite3('nutrimapa.sqlite') or die ('Unable to open DB');
+$selectQuery = $nutrimapa_db ->query('SELECT * FROM usuarios WHERE id = 1');
+$row = ($selectQuery -> fetchArray());
+$cookieValor = $row ['nome'];
+$cookieId = "cookieUsuario";
+$cookieTempo = time() + (3600 * 24);
+setcookie($cookieId, $cookieValor, $cookieTempo, "/");
+?>
+
 <html lang="PT-BR">
 <head>
 <meta charset="UTF-8">
@@ -17,12 +28,20 @@
 		<a href="mapas.html"><img align="right" style="margin-top:38px;margin-right:40px" src="icones/claros/Mapa.png"></a>
 		<a href="receitas.html"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/claros/Receitas.png"></a>
 	</header>
-	
-<?php
-setcookie ('$nome', '$idade', '$senha');
-echo $_COOKIE['$nome'];
-echo "oi guuuuuuuu";
-?>
+	<div>
+		<p style = "margin-top: 300px;">
+			<?php
+			if(count($_COOKIE) > 0) {
+  				  echo "Cookies are enabled";
+			} else {
+   				  echo "Cookies are disabled";
+			}
+			
+			echo $_COOKIE[$cookieId];
+			?>
+		</p>
+
+	</div>
 
 </body>
 </html>
