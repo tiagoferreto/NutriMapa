@@ -3,21 +3,13 @@
 <?php
 session_start();
 
-$nutrimapa_db = sqlite_open('testedbusuario.sqlite');
-$error = "erro";
-
-
-
-
-
-
-if((sqlite_exec($nutrimapa_db, 'SELECT nome FROM usuarios WHERE id = 1') == 'nutrimapa' )
-
-echo 'deu certo';
-
-//$_SESSION['usuario'] = $usuario;
-//$_SESSION['idade'] = '19';
-//$_SESSION['senha'] = '12345';
+$nutrimapa_db = new SQLite3('nutrimapa.sqlite') or die ('Unable to open DB');
+$selectQuery = $nutrimapa_db ->query('SELECT * FROM usuarios WHERE id = 1');
+$row = ($selectQuery -> fetchArray());
+$cookieValor = $row ['nome'];
+$cookieId = "cookieUsuario";
+$cookieTempo = time() + (3600 * 24);
+setcookie($cookieId, $cookieValor, $cookieTempo, "/");
 ?>
 
 <html lang="PT-BR">
@@ -40,12 +32,8 @@ echo 'deu certo';
 	</header>
 	<div>
 		<p style = "margin-top: 300px;">
-			//<?php
-			//echo $_SESSION['usuario'];
-//			echo nl2br("\n");
-//			echo $_SESSION['idade'];
-//			echo nl2br("\n");
-//			echo $_SESSION['senha'];
+			<?php
+			echo $_COOKIE[$cookieId];
 			?>
 		</p>
 
