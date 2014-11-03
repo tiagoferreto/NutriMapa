@@ -1,8 +1,6 @@
 <DOCTYPE! hmtl>
 
 <?php
-session_start();
-
 $nutrimapa_db = new SQLite3('nutrimapa.sqlite') or die ('Unable to open DB');
 $selectQuery = $nutrimapa_db ->query('SELECT * FROM usuarios WHERE id = 1');
 $row = ($selectQuery -> fetchArray());
@@ -33,6 +31,12 @@ setcookie($cookieId, $cookieValor, $cookieTempo, "/");
 	<div>
 		<p style = "margin-top: 300px;">
 			<?php
+			if(count($_COOKIE) > 0) {
+  				  echo "Cookies are enabled";
+			} else {
+   				  echo "Cookies are disabled";
+			}
+			
 			echo $_COOKIE[$cookieId];
 			?>
 		</p>
