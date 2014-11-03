@@ -38,12 +38,13 @@ body{
 
 }
 .button_entrar{
-    margin: 20px 0 0 0;
+    margin: 20px 0 200px 0;
     border: 0;
     background: #0A2A12;
     color: white;
     font-size: 30px;
     padding: 8px 40px;
+
 }
 /*--------------------------------- RECEITAS ----------------------------------*/
 
@@ -294,12 +295,17 @@ h3{
 }
 .enviar{
     top: 220px;
-    margin-left: 983px;
-    font-size: 28px;
+    margin-left: 983px;    
     font-family: 'Abel', sans-serif;
     color: white;
     border: 0;    
     position: relative;
+
+    margin: 20px;
+    background: #0A2A12;
+    color: white;
+    font-size: 30px;
+    padding: 8px 40px;
 }
 .comentario{
     font-size: 35px;
@@ -322,7 +328,7 @@ h3{
     position: relative;
     top: 300px;
     margin: 0 auto;
-    margin-bottom: 300px;
+    /*margin-bottom: 300px;*/
 }
 
 /*--------------------------------- SOBRE -----------------------------------*/
