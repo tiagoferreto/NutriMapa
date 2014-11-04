@@ -36,13 +36,6 @@ var map=new google.maps.Map(document.getElementById("googleMap")
     echo "var marker{$row['id']}=new google.maps.Marker({
       position:new google.maps.LatLng({$row['latitude']},{$row['longitude']})});";
   echo "marker{$row['id']}.setMap(map); \n";
-
- echo "var infowindow = new google.maps.InfoWindow({
-  content:"olaa"
-  });";
-echo "google.maps.event.addListener(marker{$row['id']}, 'click', function() {
-  infowindow.open(map,marker{$row['id']});
-  });";
       }
 
 ?>
