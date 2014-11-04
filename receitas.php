@@ -11,18 +11,17 @@
 
 <body>
 	<header>
-		<a href="index.html"><img  style="margin-top:20px;margin-left:30px;widht:130px;height:130px" src="icones/claros/Logo.png"></a>
-		<a href="sobre.html"><img align="right" style="margin-top:40px;margin-right:50px" src="icones/claros/Sobre.png"></a>
-		<a href="favoritos.html"><img align="right" style="margin-top:37px;margin-right:40px" src="icones/claros/Favoritos.png"></a>
-		<a href="locais.html"><img align="right" style="margin-top:34px;margin-right:40px" src="icones/escuros/Locais2.png"></a>
-		<a href="receitas.html"><img align="right" style="margin-top:38px;margin-right:40px" src="icones/claros/Receitas.png"></a>
-		<a href="mapas.html"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/claros/Mapa.png"></a>
+		<a href="index.php"><img  style="margin-top:20px;margin-left:30px;widht:130px;height:130px" src="icones/logo.png"></a>
+		<a href="sobre.html"><img align="right" style="margin-top:40px;margin-right:50px" src="icones/sobre_escuro.png"></a>
+		<a href="favoritos.html"><img align="right" style="margin-top:37px;margin-right:40px" src="icones/favoritos_escuro.png"></a>
+		<a href="locais.php"><img align="right" style="margin-top:34px;margin-right:40px" src="icones/locais_escuro.png"></a>
+		<a href="receitas.php"><img align="right" style="margin-top:38px;margin-right:40px" src="icones/receitas_claro.png"></a>
+		<a href="mapas.html"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/mapa_escuro.png"></a>
 	</header>
 	<!-- seção para ser gerada de forma dinâmica -->
 
 	<div id= "caixa">
 		<div class = "tipo_receita">
-			<h3> Lojas</h3>
 			<?php
 				$top = TRUE;
 				$pos = "top";
