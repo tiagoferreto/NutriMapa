@@ -11,12 +11,19 @@
 
 <body>
 	<header>
-		<a href="index.html"><img  style="margin-top:20px;margin-left:30px;widht:130px;height:130px" src="icones/claros/Logo.png"></a>
-		<a href="sobre.html"><img align="right" style="margin-top:40px;margin-right:50px" src="icones/claros/Sobre.png"></a>
-		<a href="favoritos.html"><img align="right" style="margin-top:37px;margin-right:40px" src="icones/claros/Favoritos.png"></a>
-		<a href="locais.html"><img align="right" style="margin-top:34px;margin-right:40px" src="icones/escuros/Locais2.png"></a>
-		<a href="receitas.html"><img align="right" style="margin-top:38px;margin-right:40px" src="icones/claros/Receitas.png"></a>
-		<a href="mapas.html"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/claros/Mapa.png"></a>
+		<?php
+			$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
+			$img = $db->query('SELECT * FROM img_icones') or die('Query db failed');
+			$imgrow = $img->fetchArray();
+
+
+			echo "<a href=\"index.php\"><img  style=\"margin-top:20px;margin-left:30px;widht:130px;height:130px\" src=\"icones/logo.png\"></a>";
+			echo "<a href=\"sobre.html\"><img align=\"right\" style=\"margin-top:40px;margin-right:50px\" src=\"icones/sobre_escuro.png\"></a>";
+			echo "<a href=\"favoritos.html\"><img align=\"right\" style=\"margin-top:37px;margin-right:40px\" src=\"icones/favoritos_escuro.png\"></a>";
+			echo "<a href=\"locais.php\"><img align=\"right\" style=\"margin-top:34px;margin-right:40px\" src=\"icones/locais_claro.png\"></a>";
+			echo "a href=\"receitas.php\"><img align=\"right\" style=\"margin-top:38px;margin-right:40px\" src=\"icones/receitas_escuro.png\"></a>";
+			echo "<a href=\"mapas.html\"><img align=\"right\" style=\"margin-top:42px;margin-right:40px\" src=\"icones/mapa_escuro.png\"></a>";
+		?>
 	</header>
 	<!-- seção para ser gerada de forma dinâmica -->
 
@@ -25,8 +32,7 @@
 		<?php
 			$top = TRUE;
 			$pos = "top";
-			$db = new SQLite3('nutrimapa.sqlite') or die('Unable to op
-				en database');
+			$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
 		
 			$result = $db->query('SELECT * FROM locais;') or die('Query db failed');
 			$loja = $db->query('SELECT * FROM locais WHERE loja = 1') or die('Query db failed2');
