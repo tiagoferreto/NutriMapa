@@ -17,22 +17,37 @@
 		<a href="receitas.html"><img align="right" style="margin-top:38px;margin-right:40px" src="icones/claros/Receitas.png"></a>
 		<a href="mapas.html"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/claros/Mapa.png"></a>
 	</header>
-	<div class="local">
+
+	<div class="rece_esque">
 		<?php
 		$id = $_GET["id"];
 		$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
-		$statement = $db->prepare('SELECT * FROM locais WHERE id = :id;');
+		$statement = $db->prepare('SELECT * FROM receitas WHERE id = :id;');
 		$statement->bindValue(':id', $id);
 		$result = $statement->execute();
 		$row = $result->fetchArray();
-		echo "<div id=\"imagem_local\">";
-		echo "<h1 id=\"plocal\">{$row['nome']}</h1><br>";
-		echo "<img src=\"imglojas/{$row['imagem']}\" width =\"300\" height=\"267\">";
+		
+
+		//DIV IMAGEM DA RECEITA
+		echo "<div id=\"rece_img\">";
+		echo "<img src=\"imgreceitas/{$row['imagem']}\" width =\"300\" height=\"267\">";
 		echo "</div>";
-		echo "<div id=\"description\">";
-		echo "<h2 id=\"textlocal\"> {$row['categoria']} </h2>";
-		echo "<p id=\"intro\">“{$row['descricao']}”<br><br><br></p>";
-		echo "<p id=\"address\">{$row['endereco']}</p>";
+		
+		//DIV TABELA DA RECEITA
+		echo "<div id=\"rece_tab\">";
+		echo "<p> Tabela Nutricional </p>";
+		echo "<img src=\"imgreceitas/{$row['tabela']}\" width =\"345\" height=\"460\">";
+		echo "</div>";
+
+		//DIV INFORMAÇÕES DA RECEITA
+		echo "<div id=\"rece_info\">";
+		echo "<h1>{$row['nome']}</h1></br>";
+		echo "<p id=\"ing\">{$row['ingredientes']}</p></br>";
+		echo "<p id=\"ing\">{$row['modo_fazer']}</p></br>";
+		echo "<h2> Origem: </h2></br>";
+		echo "<p id=\"origem\">";
+		echo "<a href=\"{$row['origem_url']}\">{$row['nome_origem']}</a>";
+		echo "</p>";
 		echo "</div>";
 		?>
 	</div>
