@@ -224,6 +224,10 @@ h3{
     top: -155px;
     position: relative;
 }
+.pagina{
+    display: inline;
+    margin-bottom: 220px;
+}
 /*------------------------------- RESTAURANTE -------------------------------*/ 
 
 .local{
