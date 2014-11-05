@@ -12,7 +12,6 @@
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCVJqGdm03cFzk8Ea6Cl_EFKRFD8nIHa2U&amp;sensor=false">
 </script>
 
-
 <script>
 
 function initialize()
@@ -24,27 +23,24 @@ var mapProp = {
   };
 var map=new google.maps.Map(document.getElementById("googleMap")
   ,mapProp);
+
+
+<?php
+
+  $db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
+  
+  $result = $db->query('SELECT * FROM enderecos;') or die('Query db failed');
+
+  while ($row = $result->fetchArray())
+  {
+    echo "var marker{$row['id']}=new google.maps.Marker({
+      position:new google.maps.LatLng({$row['latitude']},{$row['longitude']})});";
+  echo "marker{$row['id']}.setMap(map); \n";
+      }
+
+?>
+
 }
-
-function addMarker(lat,lng)
-{
-  var marker=new google.maps.Marker({
-  position:new google.maps.LatLng(lat,lng),
-  });
-
-marker.setMap(map);
-}
-
- <?php
- $result = $db->query('SELECT * FROM locais;') or die('Query db failed');
- while ($row = $result->fetchArray()){
- $name=$row['endereco'];
- $lat=$row['latitude'];
- $lon=$row['longitude'];
- $desc=$row['endereco'];
- echo ("addMarker($lat, $lon);\n");
- }
- ?>
 
 
 google.maps.event.addDomListener(window, 'load', initialize); 

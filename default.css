@@ -55,7 +55,7 @@ body{
     margin-right: 30;
     min-width: 1250px;
 }
-.light_diet{
+.tipo_receita{
     height: 500px;
     margin-top: 30px;
 }
@@ -68,12 +68,12 @@ body{
     position: absolute;
     margin-top: -20px;
 }
-.light_diet p{
+.tipo_receita p{
     color: white;
     font-size: 40px;
     font-family: 'Abel', sans-serif;
 }
- .light_diet .receita p{
+ .tipo_receita .receita p{
     font-size: 20px;
     color: white;
     margin-top: 0;
