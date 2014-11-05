@@ -18,7 +18,7 @@ function initialize()
 {
 var mapProp = {
   center:new google.maps.LatLng(-30.034971, -51.209816),
-  zoom:13,
+  zoom:12,
   mapTypeId:google.maps.MapTypeId.ROADMAP
   };
 var map=new google.maps.Map(document.getElementById("googleMap")
@@ -29,17 +29,34 @@ var map=new google.maps.Map(document.getElementById("googleMap")
 
   $db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
   
-  $result = $db->query('SELECT * FROM enderecos;') or die('Query db failed');
+  $result = $db->query('SELECT * FROM enderecos;') or die('Query db failed1');
+  $idlocais = $db->query('SELECT locais.id,enderecos.lid, locais.nome FROM locais,enderecos WHERE locais.id=enderecos.lid;') or die('Query db failed');
 
-  while ($row = $result->fetchArray())
-  {
+  while ($row = $result->fetchArray()){
+
     echo "var marker{$row['id']}=new google.maps.Marker({
-      position:new google.maps.LatLng({$row['latitude']},{$row['longitude']})});";
-  echo "marker{$row['id']}.setMap(map); \n";
-      }
+          position:new google.maps.LatLng({$row['latitude']},{$row['longitude']}),icon:'carrot_cartoonII.png'});";
+    echo "marker{$row['id']}.setMap(map); \n";
+    $row2= $idlocais->fetchArray();
+    echo"var infowindow = new google.maps.InfoWindow({";
+    echo "content:"{$row2['nome']}"";
+    echo "});";
 
+    echo "google.maps.event.addListener(marker{$row['id']}, 'click', function() {";
+    echo "infowindow.open(map,marker{$row['id']});";
+    echo "});";
+    }
 ?>
+/*
+var infowindow<?=$row['id']?> = new google.maps.InfoWindow({
+  content:"<?=$row2['nome']?><br><?=$row['endereco']?>"
+  });
 
+google.maps.event.addListener(marker<?=$row['id']?>, 'click', function() {
+  infowindow<?=$row['id']?>.open(map,marker<?=$row['id']?>);
+  });
+*/
+//<?php endwhile; ?>
 }
 
 
