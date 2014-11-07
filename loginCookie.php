@@ -1,16 +1,28 @@
 <?php
 $ver = $_GET['username'];
+unset($_COOKIE['cookieNome']);
+setcookie('cookieNome', '', time() - 3600, "/");
 echo 'REDIRECIONANDO';
 echo nl2br("\n");
-echo nl2br("\n");
-$nutrimapa_db = new SQLite3('nutrimapa.sqlite') or die ('Unable to open DB');
-$selectQuery = $nutrimapa_db ->query('SELECT * FROM usuarios');
+$DB = new SQLite3('nutrimapa.sqlite') or die ('Unable to open DB');
+$selectQuery = $DB -> query('SELECT * FROM usuarios');
 $row = ($selectQuery -> fetchArray());
 $valor = $row ['id'];
 if($ver == $row['user_name']){
 	$value = $valor;
 }
-$time = time() + 3600;
-setcookie('usuarioCadastro', $value, $time);
-//echo $_COOKIE['usuarioCadastro'];
+
+if(!isset($_COOKIE['cookieNome'])) {
+	$cookieNome = 'usuarioCookie';
+    setcookie('cookieNome', $value, time() + 3600, "/");
+    echo "condicao 1";
+    header("Location: http://192.168.10.10/redireciona.php");
+} else {
+	$cookieNome = 'usuarioCookie';
+    unset($_COOKIE['cookieNome']);
+	setcookie('cookieNome', '', time() - 3600, "/");
+    setcookie('cookieNome', $value, time() + 3600, "/");
+    echo "condicao 2";
+    header("Location: http://192.168.10.10/redireciona.php");
+}
 ?>
