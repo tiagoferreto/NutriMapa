@@ -198,15 +198,22 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
+<<<<<<< HEAD
 <div id="cookieUsuario">
   <p id = "cookieTexto">Olá <?php
+=======
+
+
+<div id="cookieUsuarioMapa">
+  <p id = "cookieTextoMapa">Olá <?php
+>>>>>>> 18ed3e2f817838877e13c9d17e47026ed7b82be4
         $veri = $_COOKIE['cookieNome'];
         $nutrimapa_db = new SQLite3('nutrimapa.sqlite') or die ('Unable to open DB');
         $selectQuery = $nutrimapa_db ->query('SELECT * FROM usuarios WHERE id = '.$veri);
         $row = ($selectQuery -> fetchArray());
         echo $row['nome'];
      ?>
-     !
+     ! <div id= 'sairMapa'><a href ="http://192.168.10.10/index2.php">(Sair)</a></div>
    </p>
  </div>
 

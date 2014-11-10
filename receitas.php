@@ -22,30 +22,269 @@
 
 	<div id= "caixa">
 		<div class = "tipo_receita">
+			<p>Diet</p>
 			<?php
-				$top = TRUE;
-				$pos = "top";
-				$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
-			
-				$result = $db->query('SELECT * FROM receitas;') or die('Query db failed');
-				$restaurante = $db->query('SELECT * FROM locais WHERE rest = 1') or die('Query db failed');
 
-				while ($row = $loja->fetchArray())
-				{	
-					if($top) {
-						$pos = "top";
-					}else {
-						$pos = "left";
-					}
+				$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
+				$diet = $db->query('SELECT * FROM receitas WHERE diet = 1') or die('Query failed2');
+				
+				//VARIÁVEIS DE CONTROLE DA POSIÇÃO DAS DIVS
+				$qtd = 0;
+				$ml = 0;
+				$mt = 0;
+
+
+
+				while ($row = $diet->fetchArray())
+				{
+					switch ($qtd) {
+						case '0':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt; margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = $qtd+1;
+							$ml = $ml + 370;
+						break;
 						
-					echo "<div class= \"{$pos}\">\n";
-					echo "<div class =\"locais\">\n";
-					echo "<a href=\"local.php?id={$row['id']}\"><img src=\"imglojas/{$row['imagem']}\" width=\"148\" height=\"156\"></a>\n";
-					echo "<p class = \"nome_local\">{$row['nome']}</p>\n";
-					
-					echo "</div>\n";
-					echo "</div>\n";				
-					$top = !($top);
+						case '1':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = $qtd+1;
+							$ml = $ml + 370;
+						break;
+						case '2':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = $qtd+1;
+							$ml = $ml + 370;
+						break;
+						case '3':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = 0;
+							$ml = 0;
+							$mt = $mt + 220;
+						break;
+						
+						default:
+							# code...
+						break;
+					}
+				}
+			?>
+		</div>
+		<div class = "tipo_receita">
+			<p>Light</p>
+			<?php
+
+				$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
+				$light = $db->query('SELECT * FROM receitas WHERE light = 1') or die('Query failed2');
+				
+				//VARIÁVEIS DE CONTROLE DA POSIÇÃO DAS DIVS
+				$qtd = 0;
+				$ml = 0;
+				$mt = 0;
+
+
+
+				while ($row = $light->fetchArray())
+				{
+					switch ($qtd) {
+						case '0':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt; margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = $qtd+1;
+							$ml = $ml + 370;
+						break;
+						
+						case '1':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = $qtd+1;
+							$ml = $ml + 370;
+						break;
+						case '2':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = $qtd+1;
+							$ml = $ml + 370;
+						break;
+						case '3':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = 0;
+							$ml = 0;
+							$mt = $mt + 220;
+							break;
+						
+						default:
+							# code...
+							break;
+					}
+				}
+			?>
+		</div>
+		<div class = "tipo_receita">
+			<p>Sem Glúten</p>
+			<?php
+
+				$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
+				$ngluten = $db->query('SELECT * FROM receitas WHERE n_gluten = 1') or die('Query failed2');				
+				//VARIÁVEIS DE CONTROLE DA POSIÇÃO DAS DIVS
+				$qtd = 0;
+				$ml = 0;
+				$mt = 0;
+
+
+
+				while ($row = $ngluten->fetchArray())
+				{
+					switch ($qtd) {
+						case '0':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt; margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = $qtd+1;
+							$ml = $ml + 370;
+							break;
+						
+						case '1':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = $qtd+1;
+							$ml = $ml + 370;
+						break;
+						case '2':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = $qtd+1;
+							$ml = $ml + 370;
+						break;
+						case '3':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = 0;
+							$ml = 0;
+							$mt = $mt + 220;
+						break;
+						
+						default:
+							# code...
+							break;
+					}
+				}
+			?>
+		</div>
+		<div class = "tipo_receita">
+			<p>Sem Lactose</p>
+			<?php
+
+				$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
+				$nlactose = $db->query('SELECT * FROM receitas WHERE n_lactose = 1') or die('Query failed2');
+				
+				//VARIÁVEIS DE CONTROLE DA POSIÇÃO DAS DIVS
+				$qtd = 0;
+				$ml = 0;
+				$mt = 0;
+
+
+
+				while ($row = $nlactose->fetchArray())
+				{
+					switch ($qtd) {
+						case '0':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt; margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = $qtd+1;
+							$ml = $ml + 370;
+						break;
+						
+						case '1':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = $qtd+1;
+							$ml = $ml + 370;
+						break;
+						case '2':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = $qtd+1;
+							$ml = $ml + 370;
+						break;
+						case '3':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
+							$qtd = 0;
+							$ml = 0;
+							$mt = $mt + 220;
+							break;
+						
+						default:
+							# code...
+						break;
+					}
 				}
 			?>
 		</div>

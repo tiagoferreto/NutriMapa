@@ -11,7 +11,12 @@ document.onkeydown=enter; //Para o navegador reconhecer o comando da tecla 'ente
 		username=username.toLowerCase(); //toLowerCase() = transforma as letras, se existentes, do valor em minúsculas;	
 		var password=document.login.password.value;
 		password=password.toLowerCase();
-		if (username=="nutrimapa" && password=="nutrimapa") { window.location="http://www.google.com.br/"; concluido=true; } //window.location = envia para  outra página.
+		if (username=="nutrimapa" && password=="nutrimapa") { window.location="loginCookie.php?username="+username+"&senha="+password; concluido=true; } //window.location = envia para  outra página.
+		if (username=="joaofanti" && password=="12345") { window.location="loginCookie.php?username="+username+"&senha="+password; concluido=true; }
+		if (username=="gustavo" && password=="12345") { window.location="loginCookie.php?username="+username+"&senha="+password; concluido=true; }
+		if (username=="guilherme" && password=="12345") { window.location="loginCookie.php?username="+username+"&senha="+password; concluido=true; }
+		if (username=="pedro" && password=="12345") { window.location="loginCookie.php?username="+username+"&senha="+password; concluido=true; }
+		if (username=="felipe" && password=="12345") { window.location="loginCookie.php?username="+username+"&senha="+password; concluido=true; }
 		if (username=="ferreto" && password=="701") { window.location="http://www.google.com.br/"; concluido=true; }
 		if (concluido==false) { alert("Seu login ou senha é inválido"); }
 	}
