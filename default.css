@@ -414,7 +414,7 @@ h3{
   text-align: center;  
   vertical-align: middle;
 }
-body{
+.body{
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
   Helvetica, Arial, "Lucida Grande", sans-serif;}
   &::before{
@@ -426,6 +426,7 @@ body{
     display:inline-block;
   }
 }
+
 
 /*--------------------------------- SOBRE -----------------------------------*/
 

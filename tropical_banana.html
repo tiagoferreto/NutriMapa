@@ -8,7 +8,6 @@
 $(':radio').change(
   function(){
     $('.choice').text( this.value + ' Pimentas' );
-    print(this.value + ' Pimentas');
   } 
 )
 </script>
@@ -45,7 +44,7 @@ $(':radio').change(
 			<a href="http://www.tropicalbanana.com.br/"> Tropical Banana<br></p>
 		</div>	
 	</div>
-
+<div id="body">
 <span class="star-rating">
   <input type="radio" name="rating" value="1"><i id="item"></i>
   <input type="radio" name="rating" value="2"><i id="item"></i>
@@ -53,7 +52,7 @@ $(':radio').change(
   <input type="radio" name="rating" value="4"><i id="item"></i>
   <input type="radio" name="rating" value="5"><i id="item"></i>
 </span>
-
+</div>
 
 </body>
 </html>
