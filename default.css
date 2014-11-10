@@ -83,6 +83,27 @@ body{
 #menor{
     height: 300px;
 }
+#cookieUsuarioReceitas{
+    position: relative;
+    left: 950px;
+    bottom: 3040px;
+    height: 43px;
+    width: 295px;
+}
+
+#cookieTextoReceitas{
+    color:black;
+    position: relative;
+    right: 40px;
+    bottom: 12px;
+}
+ #sairReceitas{
+    position: relative;
+    left: 254px;
+    bottom: 55px;
+    font-size: 18px;
+ }
+
 /*--------------------------------- RECEITAS ESQUELETO ----------------------------------*/
 
 h1{
@@ -154,6 +175,7 @@ a:hover{
 a:active{
     color:#0A2A12;
 }
+
 
 
 
