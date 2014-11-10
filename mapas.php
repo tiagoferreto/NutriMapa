@@ -123,5 +123,23 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <div id="googleMap" style="max-width:1400px; min-width:1280px; height:600px;"></div>
 
 
+
+
+
+<div id="cookieUsuario">
+  <p id = "cookieTexto">Olá <?php
+        $veri = $_COOKIE['cookieNome'];
+        $nutrimapa_db = new SQLite3('nutrimapa.sqlite') or die ('Unable to open DB');
+        $selectQuery = $nutrimapa_db ->query('SELECT * FROM usuarios WHERE id = '.$veri);
+        $row = ($selectQuery -> fetchArray());
+        echo $row['nome'];
+     ?>
+     !
+   </p>
+ </div>
+
+
+
+
 </body>
 </html> 

@@ -455,3 +455,19 @@ h3{
     width: 0; 
     left: 138px 
 }
+
+#cookieUsuario{
+    position: relative;
+    left: 950px;
+    bottom: 748px;
+    border:solid red;
+    height: 43px;
+    width: 295px;
+}
+
+#cookieTexto{
+    color:black;
+    position: relative;
+    right: 40px;
+    bottom: 12px;
+}
