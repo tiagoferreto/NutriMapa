@@ -36,6 +36,14 @@
 		echo "</div>";
 		?>
 	</div>
+	<span class="star-rating">
+  <input type="radio" name="rating" value="1"><i id="item"></i>
+  <input type="radio" name="rating" value="2"><i id="item"></i>
+  <input type="radio" name="rating" value="3"><i id="item"></i>
+  <input type="radio" name="rating" value="4"><i id="item"></i>
+  <input type="radio" name="rating" value="5"><i id="item"></i>
+</span>
+
 
 </body>
 </html>

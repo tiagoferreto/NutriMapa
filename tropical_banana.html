@@ -4,18 +4,26 @@
 <meta charset="UTF-8">
 <link href="default.css" rel="stylesheet" type="text/css" media="all">
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+<script language="JavaScript">
+$(':radio').change(
+  function(){
+    $('.choice').text( this.value + ' Pimentas' );
+    print(this.value + ' Pimentas');
+  } 
+)
+</script>
 <title>
 		NutriMapa
 	</title>
 </head>
 <body>
 	<header>
-		<a href="index.html"><img  style="margin-top:20px;margin-left:30px" src="icones/claros/Logo.png"></a>
-		<a href="sobre.html"><img align="right" style="margin-top:40px;margin-right:50px" src="icones/claros/Sobre.png"></a>
-		<a href="favoritos.html"><img align="right" style="margin-top:37px;margin-right:40px" src="icones/claros/Favoritos.png"></a>
-		<a href="locais.html"><img align="right" style="margin-top:34px;margin-right:40px" src="icones/escuros/Locais2.png"></a>
-		<a href="mapas.html"><img align="right" style="margin-top:38px;margin-right:40px" src="icones/claros/Mapa.png"></a>
-		<a href="receitas.html"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/claros/Receitas.png"></a>
+		<a href="index.html"><img  style="margin-top:20px;margin-left:30px" src="icones/Logo.png"></a>
+		<a href="sobre.html"><img align="right" style="margin-top:40px;margin-right:50px" src="icones/Sobre.png"></a>
+		<a href="favoritos.html"><img align="right" style="margin-top:37px;margin-right:40px" src="icones/Favoritos.png"></a>
+		<a href="locais.html"><img align="right" style="margin-top:34px;margin-right:40px" src="icones/Locais2.png"></a>
+		<a href="mapas.html"><img align="right" style="margin-top:38px;margin-right:40px" src="icones/Mapa.png"></a>
+		<a href="receitas.html"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/Receitas.png"></a>
 	</header>
 	<div class="local">
 
@@ -37,6 +45,15 @@
 			<a href="http://www.tropicalbanana.com.br/"> Tropical Banana<br></p>
 		</div>	
 	</div>
+
+<span class="star-rating">
+  <input type="radio" name="rating" value="1"><i id="item"></i>
+  <input type="radio" name="rating" value="2"><i id="item"></i>
+  <input type="radio" name="rating" value="3"><i id="item"></i>
+  <input type="radio" name="rating" value="4"><i id="item"></i>
+  <input type="radio" name="rating" value="5"><i id="item"></i>
+</span>
+
 
 </body>
 </html>
