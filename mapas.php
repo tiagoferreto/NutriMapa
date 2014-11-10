@@ -48,36 +48,110 @@ var map=new google.maps.Map(document.getElementById("googleMap")
 <?php
 
   $db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
-  /*
-  if(isset($_POST['check1'])  AND isset($_POST['check2']) AND isset($_POST['check3'])  AND isset($_POST['check4']))
+  
+  if(isset($_POST['check1'])  AND isset($_POST['check2']) AND isset($_POST['check3'])  AND  isset($_POST['check4']))
   {
-    $result = $db->query('SELECT * FROM enderecos,locais WHERE locais.gluten=1 ') or die('Query db failed1');
+    $result = $db->query('SELECT * FROM enderecos WHERE gluten=1 and lactose=1 and light=1 and diet=1') or die('Query db failed1');
   }
-  elseif(isset($_POST['check3'])  OR isset($_POST['check4']))
+  elseif(isset($_POST['check1'])  AND isset($_POST['check2']) AND isset($_POST['check3']))
   {
 
-    $result = $db->query('SELECT * FROM enderecos WHERE id=3 ') or die('Query db failed1');  
+    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 and gluten=1 and light=1 ') or die('Query db failed1');  
   
   }
+  elseif(isset($_POST['check2'])  AND isset($_POST['check3']) AND isset($_POST['check4']))
+  {
 
+    $result = $db->query('SELECT * FROM enderecos WHERE gluten=1 and light=1 and diet=1 ') or die('Query db failed1');  
+  
+  }
+   elseif(isset($_POST['check1'])  AND isset($_POST['check2']) AND isset($_POST['check4']))
+  {
+
+    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 and gluten=1 and diet=1 ') or die('Query db failed1');  
+  
+  }
+   elseif(isset($_POST['check1'])  AND isset($_POST['check3']) AND isset($_POST['check4']))
+  {
+
+    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 and light=1 and diet=1 ') or die('Query db failed1');  
+  
+  }
+   elseif(isset($_POST['check1'])  AND isset($_POST['check2']))
+  {
+
+    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 and gluten=1 ') or die('Query db failed1');  
+  
+  }
+   elseif(isset($_POST['check1'])  AND isset($_POST['check3']))
+  {
+
+    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 and light=1 ') or die('Query db failed1');  
+  
+  }
+   elseif(isset($_POST['check1'])  AND isset($_POST['check4']))
+  {
+
+    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 and diet=1 ') or die('Query db failed1');  
+  
+  }
+   elseif(isset($_POST['check2'])  AND isset($_POST['check3']))
+  {
+
+    $result = $db->query('SELECT * FROM enderecos WHERE gluten=1 and light=1 ') or die('Query db failed1');  
+  
+  }
+   elseif(isset($_POST['check2'])  AND isset($_POST['check4']))
+  {
+
+    $result = $db->query('SELECT * FROM enderecos WHERE gluten=1 and diet=1 ') or die('Query db failed1');  
+  
+  }
+   elseif(isset($_POST['check3'])  AND isset($_POST['check4']))
+  {
+
+    $result = $db->query('SELECT * FROM enderecos WHERE light=1 and diet=1 ') or die('Query db failed1');  
+  
+  }
+   elseif(isset($_POST['check1']))
+  {
+
+    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1') or die('Query db failed1');  
+  
+  }
+  elseif(isset($_POST['check2']))
+  {
+
+    $result = $db->query('SELECT * FROM enderecos WHERE gluten=1') or die('Query db failed1');  
+  
+  }
+  elseif(isset($_POST['check3']))
+  {
+
+    $result = $db->query('SELECT * FROM enderecos WHERE light=1') or die('Query db failed1');  
+  
+  }
+  elseif(isset($_POST['check4']))
+  {
+
+    $result = $db->query('SELECT * FROM enderecos WHERE diet=1') or die('Query db failed1');  
+  
+  }
   else{
 
     $result = $db->query('SELECT * FROM enderecos ') or die('Query db failed1');
   
   }
-  */
-  $result = $db->query('SELECT enderecos.id, enderecos.latitude, enderecos.longitude, enderecos.endereco, locais.diet FROM enderecos INNER JOIN locais ON locais.id=1') or die('Query db failed1');
-  $idlocais = $db->query('SELECT locais.id,enderecos.lid,locais.nome,locais.url, locais.diet FROM enderecos INNER JOIN locais ON locais.id=enderecos.lid and locais.id=1') or die('Query db failed');
+  //$idlocais = $db->query('SELECT locais.id,enderecos.lid,locais.nome,locais.url, locais.diet FROM enderecos, locais WHERE locais.id=enderecos.lid and enderecos.id=1') or die('Query db failed');
 
   while ($row = $result->fetchArray()){
       echo "var marker{$row['id']}=new google.maps.Marker({
             position:new google.maps.LatLng({$row['latitude']},{$row['longitude']}),icon:'carrot_cartoonII.png'});";
       echo "marker{$row['id']}.setMap(map); \n";
-      $row2= $idlocais->fetchArray();
 ?>
 
 var infowindow<?=$row['id']?> = new google.maps.InfoWindow({
-  content:"<?=$row2['nome']?><br><?=$row['endereco']?><br><?=$row2['url']?>"
+  content:"<?=$row['nome']?><br><?=$row['endereco']?><br><?=$row['url']?>"
   });
 
 google.maps.event.addListener(marker<?=$row['id']?>, 'click', function() {
@@ -124,8 +198,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
-
-
 <div id="cookieUsuario">
   <p id = "cookieTexto">Olá <?php
         $veri = $_COOKIE['cookieNome'];
@@ -137,7 +209,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
      !
    </p>
  </div>
-
 
 
 
