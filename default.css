@@ -374,7 +374,7 @@ h3{
 
 #googleMap{
     position: relative;
-
+    top:-50px;
 }
 
 #pesquisa{
@@ -401,6 +401,11 @@ h3{
     top: -15px;
     position: relative;
     left: 30px;
+}
+#checkboxMapa{
+    position: relative;
+    left: 900px;
+    top:-100px;
 }
 .caixainput{
     border: 0px;
