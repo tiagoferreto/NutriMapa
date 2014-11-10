@@ -81,6 +81,7 @@
 		?>	
 	</div>
 
+
 	<div id="cookieUsuarioLocais">
   <p id = "cookieTextoLocais">Olá <?php
         $veri = $_COOKIE['cookieNome'];
@@ -92,10 +93,6 @@
      ! <div id= 'sairLocais'><a href ="http://192.168.10.10/index2.php">(Sair)</a></div>
    </p>
  </div>
-
-
-
-
 
 
 </body>
