@@ -48,16 +48,32 @@ var map=new google.maps.Map(document.getElementById("googleMap")
 <?php
 
   $db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
+  /*
+  if(isset($_POST['check1'])  AND isset($_POST['check2']) AND isset($_POST['check3'])  AND isset($_POST['check4']))
+  {
+    $result = $db->query('SELECT * FROM enderecos,locais WHERE locais.gluten=1 ') or die('Query db failed1');
+  }
+  elseif(isset($_POST['check3'])  OR isset($_POST['check4']))
+  {
+
+    $result = $db->query('SELECT * FROM enderecos WHERE id=3 ') or die('Query db failed1');  
   
-  $result = $db->query('SELECT * FROM enderecos;') or die('Query db failed1');
-  $idlocais = $db->query('SELECT locais.id,enderecos.lid, locais.nome, locais.url FROM locais,enderecos WHERE locais.id=enderecos.lid;') or die('Query db failed');
+  }
 
-  while ($row = $result->fetchArray()):
+  else{
 
-    echo "var marker{$row['id']}=new google.maps.Marker({
-          position:new google.maps.LatLng({$row['latitude']},{$row['longitude']}),icon:'carrot_cartoonII.png'});";
-    echo "marker{$row['id']}.setMap(map); \n";
-    $row2= $idlocais->fetchArray();
+    $result = $db->query('SELECT * FROM enderecos ') or die('Query db failed1');
+  
+  }
+  */
+  $result = $db->query('SELECT enderecos.id, enderecos.latitude, enderecos.longitude, enderecos.endereco, locais.diet FROM enderecos INNER JOIN locais ON locais.id=1') or die('Query db failed1');
+  $idlocais = $db->query('SELECT locais.id,enderecos.lid,locais.nome,locais.url, locais.diet FROM enderecos INNER JOIN locais ON locais.id=enderecos.lid and locais.id=1') or die('Query db failed');
+
+  while ($row = $result->fetchArray()){
+      echo "var marker{$row['id']}=new google.maps.Marker({
+            position:new google.maps.LatLng({$row['latitude']},{$row['longitude']}),icon:'carrot_cartoonII.png'});";
+      echo "marker{$row['id']}.setMap(map); \n";
+      $row2= $idlocais->fetchArray();
 ?>
 
 var infowindow<?=$row['id']?> = new google.maps.InfoWindow({
@@ -67,8 +83,7 @@ var infowindow<?=$row['id']?> = new google.maps.InfoWindow({
 google.maps.event.addListener(marker<?=$row['id']?>, 'click', function() {
   infowindow<?=$row['id']?>.open(map,marker<?=$row['id']?>);
   });
-
-<?php endwhile; ?>
+<?php }; ?>
 
 }
 
@@ -77,7 +92,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
 </head>
-
 <body>
 <header>
         <a href="index.php"><img  style="margin-top:20px;margin-left:30px;widht:130px;height:130px" src="icones/logo.png"></a>
@@ -97,21 +111,30 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 </div>
-<div id="googleMap" style="width:1280px;height:600px;"></div>
+<div id="checkboxMapa">
+<form action="mapas.php" method="post">
+<input type="checkbox" name="check1" value="1">Sem Lactose
+<input type="checkbox" name="check2" value="1">Sem Gluten
+<input type="checkbox" name="check3" value="1">Light
+<input type="checkbox" name="check4" value="1">Diet
+<input type="submit" name="ok" value="ok">
+</form>
+</div>
+<div id="googleMap" style="max-width:1400px; min-width:1280px; height:600px;"></div>
 
 
 
 
 
-<div id="cookieUsuario">
-  <p id = "cookieTexto">Olá <?php
+<div id="cookieUsuarioMapa">
+  <p id = "cookieTextoMapa">Olá <?php
         $veri = $_COOKIE['cookieNome'];
         $nutrimapa_db = new SQLite3('nutrimapa.sqlite') or die ('Unable to open DB');
         $selectQuery = $nutrimapa_db ->query('SELECT * FROM usuarios WHERE id = '.$veri);
         $row = ($selectQuery -> fetchArray());
         echo $row['nome'];
      ?>
-     !
+     ! <div id= 'sairMapa'><a href ="http://192.168.10.10/index2.php">(Sair)</a></div>
    </p>
  </div>
 

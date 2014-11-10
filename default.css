@@ -228,6 +228,27 @@ h3{
     display: inline;
     margin-bottom: 220px;
 }
+
+#cookieUsuarioLocais{
+    position: relative;
+    left: 990px;
+    bottom: 5350px;
+    height: 43px;
+    width: 295px;
+}
+
+#cookieTextoLocais{
+    color:black;
+    position: relative;
+    right: 40px;
+    bottom: 12px;
+}
+ #sairLocais{
+    position: relative;
+    left: 254px;
+    bottom: 55px;
+    font-size: 18px;
+ }
 /*------------------------------- RESTAURANTE -------------------------------*/ 
 
 .local{
@@ -463,7 +484,7 @@ body{
 
 #googleMap{
     position: relative;
-
+    top:-50px;
 }
 
 #pesquisa{
@@ -490,6 +511,11 @@ body{
     top: -15px;
     position: relative;
     left: 30px;
+}
+#checkboxMapa{
+    position: relative;
+    left: 900px;
+    top:-100px;
 }
 .caixainput{
     border: 0px;
@@ -540,18 +566,23 @@ body{
     left: 138px 
 }
 
-#cookieUsuario{
+#cookieUsuarioMapa{
     position: relative;
     left: 950px;
-    bottom: 748px;
-    border:solid red;
+    bottom: 786px;
     height: 43px;
     width: 295px;
 }
 
-#cookieTexto{
+#cookieTextoMapa{
     color:black;
     position: relative;
     right: 40px;
     bottom: 12px;
 }
+ #sairMapa{
+    position: relative;
+    left: 254px;
+    bottom: 55px;
+    font-size: 18px;
+ }
