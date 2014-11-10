@@ -196,7 +196,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </div>
 <div id="googleMap" style="max-width:1400px; min-width:1280px; height:600px;"></div>
 
-
+<?php
+/*
 <div id="cookieUsuarioMapa">
   <p id = "cookieTextoMapa">Olá <?php
         $veri = $_COOKIE['cookieNome'];
@@ -208,8 +209,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
      ! <div id= 'sairMapa'><a href ="http://192.168.10.10/index2.php">(Sair)</a></div>
    </p>
  </div>
-
-
+*/
+?>
 
 </body>
 </html> 
