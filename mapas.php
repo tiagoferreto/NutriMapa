@@ -134,7 +134,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
         $row = ($selectQuery -> fetchArray());
         echo $row['nome'];
      ?>
-     !
+     ! <div id= 'href'><a href ="http://192.168.10.10/indexCopyJoao.php">(Sair)</a></div>
    </p>
  </div>
 

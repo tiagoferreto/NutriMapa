@@ -6,16 +6,20 @@ echo 'REDIRECIONANDO';
 echo nl2br("\n");
 $DB = new SQLite3('nutrimapa.sqlite') or die ('Unable to open DB');
 $selectQuery = $DB -> query('SELECT * FROM usuarios');
-$row = ($selectQuery -> fetchArray());
-$valor = $row ['id'];
-if($ver == $row['user_name']){
-	$value = $valor;
-}
 
+while($row = $selectQuery -> fetchArray() ){
+    $valor = $row ['id'];
+
+    if($ver == $row['user_name']){
+	   $value = $valor;
+    }
+    
+}
 if(!isset($_COOKIE['cookieNome'])) {
 	$cookieNome = 'usuarioCookie';
     setcookie('cookieNome', $value, time() + 3600, "/");
     echo "condicao 1";
+    echo nl2br("\n");
     header("Location: http://192.168.10.10/redireciona.php");
 } else {
 	$cookieNome = 'usuarioCookie';
