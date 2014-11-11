@@ -377,7 +377,7 @@ h3{
     margin: 0 auto;
     /*margin-bottom: 300px;*/
 }
-/*
+
 .star-rating{
   font-size: 0;
   white-space: nowrap;
@@ -449,7 +449,6 @@ i{
   text-align: center;
   vertical-align: middle;
 }
-<<<<<<< HEAD
 .body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
@@ -461,32 +460,7 @@ i{
   vertical-align: middle;
   display: inline-block;
 }
-=======
-<<<<<<< HEAD
-/*
-body{
-=======
-.body::before{
->>>>>>> 411e5b65b7e070b59c6d2d19dd4113a6c563a3b7
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
-  Helvetica, Arial, "Lucida Grande", sans-serif;
-  &:
-    height: 100%;
-    content:'';
-    width:0;
-    background:red;
-    vertical-align: middle;
-    display:inline-block;
-<<<<<<< HEAD
-  }
-  */
 
-=======
-  
-}
->>>>>>> 411e5b65b7e070b59c6d2d19dd4113a6c563a3b7
-
->>>>>>> 98739c62ecd749db4643aa95704ff7ed5378165b
 
 /*--------------------------------- SOBRE -----------------------------------*/
 
