@@ -200,11 +200,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </div>
 <div id="googleMap" style="max-width:1400px; min-width:1280px; height:600px;"></div>
 
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 411e5b65b7e070b59c6d2d19dd4113a6c563a3b7
 <div id="cookieUsuarioMapa">
   <p id = "cookieTextoMapa">Olá <?php
         $veri = $_COOKIE['cookieNome'];
