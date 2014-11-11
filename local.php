@@ -4,11 +4,25 @@
 <meta charset="UTF-8">
 <link href="default.css" rel="stylesheet" type="text/css" media="all">
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+$(':radio').change(
+  function(){
+    $('.choice').text( this.value + ' Pimentas' );
+  } 
+)
+</script>
 <title>
 		NutriMapa
 	</title>
 </head>
 <body>
+<script type="text/javascript">
+$(':radio').change(
+  function(){
+    $('.choice').text( this.value + ' Pimentas' );
+  } 
+)
+</script>
 	<header>
 		<a href="index.php"><img  style="margin-top:20px;margin-left:30px;widht:130px;height:130px" src="icones/logo.png"></a>
 		<a href="sobre.html"><img align="right" style="margin-top:40px;margin-right:50px" src="icones/sobre_escuro.png"></a>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <link href="default.css" rel="stylesheet" type="text/css" media="all">
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-<script language="JavaScript">
+<script type="text/javascript">
 $(':radio').change(
   function(){
     $('.choice').text( this.value + ' Pimentas' );
@@ -16,6 +16,13 @@ $(':radio').change(
 	</title>
 </head>
 <body>
+<script type="text/javascript">
+$(':radio').change(
+  function(){
+    $('.choice').text( this.value + ' Pimentas' );
+  } 
+)
+</script>
 	<header>
 		<a href="index.html"><img  style="margin-top:20px;margin-left:30px" src="icones/Logo.png"></a>
 		<a href="sobre.html"><img align="right" style="margin-top:40px;margin-right:50px" src="icones/Sobre.png"></a>
@@ -46,11 +53,11 @@ $(':radio').change(
 	</div>
 <div id="body">
 <span class="star-rating">
-  <input type="radio" name="rating" value="1"><i id="item"></i>
-  <input type="radio" name="rating" value="2"><i id="item"></i>
-  <input type="radio" name="rating" value="3"><i id="item"></i>
-  <input type="radio" name="rating" value="4"><i id="item"></i>
-  <input type="radio" name="rating" value="5"><i id="item"></i>
+  <input type="radio" name="rating" value="1" id="rating"><i id="item"></i>
+  <input type="radio" name="rating" value="2" id="rating"><i id="item"></i>
+  <input type="radio" name="rating" value="3" id="rating"><i id="item"></i>
+  <input type="radio" name="rating" value="4" id="rating"><i id="item"></i>
+  <input type="radio" name="rating" value="5" id="rating"><i id="item"></i>
 </span>
 </div>
 
