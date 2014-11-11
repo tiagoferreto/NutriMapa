@@ -5,30 +5,17 @@
 <meta charset="UTF-8">
 <link href="default.css" rel="stylesheet" type="text/css" media="all">
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-
+<?php $db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database'); ?>
+<?php
+function remover($str){
+  $remover = array("à" => "a","á" => "a","ã" => "a","â" => "a","é" => "e","ê" => "e","ì" => "i","í" => "i","ó" => "o","õ" => "o","ô" => "o","ú" => "u","ü" => "u","ç" => "c","À" => "A","Á" => "A","Ã" => "A","Â" => "A","É" => "E","Ê" => "E","Í" => "I","Ó" => "O","Õ" => "O","Ô" => "O","Ù" => "U","Ú" => "U","Ü" => "U"," " => "_");
+  return strtr($str, $remover);
+ }
+?>
 <title>
         NutriMapa
     </title>
 
-<script language="JavaScript">
-
-document.onkeydown=enter; //Para o navegador reconhecer o comando da tecla 'enter'
-    function Login(){ // Função que efetua o login
-        var concluido=false;    
-        var caixadigi=document.pesquisa.caixadigi.value; //Vai NESTE documento (document), na form de name "Login", no input de name "username" e "password" e pega o valor deles (value);
-        caixadigi=caixadigi.toLowerCase(); //toLowerCase() = transforma as letras, se existentes, do valor em minúsculas; 
-        if (caixadigi=="nutrimapa") { 
-            map.setZoom(9);
-            map.setCenter(banca13.getPosition());
-            } //window.location = envia para  outra página.
-        if (concluido==false) { alert("Estabelecimento nao encontrado"); }
-    }
-     function enter(){
-        if (event.keyCode == 13){ //Se o usuário teclar o botão 'Enter' (de código '13'), executa a função Login();
-            Login();
-        }
-    }
-</script>
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCVJqGdm03cFzk8Ea6Cl_EFKRFD8nIHa2U&amp;sensor=false">
 </script>
 
@@ -47,9 +34,29 @@ var map=new google.maps.Map(document.getElementById("googleMap")
 
 <?php
 
-  $db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
-  
-  if(isset($_POST['check1'])  AND isset($_POST['check2']) AND isset($_POST['check3'])  AND  isset($_POST['check4']))
+  if(!empty($_POST['Estabelecimento']))
+  {
+  $controle=1;
+  $y=$_POST['Estabelecimento'];
+  $palavra=strtr(strtolower($y),"ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÜÚÞß","àáâãäåæçèéêëìíîïðñòóôõö÷øùüúþÿ");
+  $palavra=remover($palavra);
+  $resultBusca = $db->query('SELECT * FROM locais ') or die('Query db failed1');
+  while ($rowBusca = $resultBusca->fetchArray()){
+    $banco= strtr(strtolower($rowBusca['nome']),"ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÜÚÞß","àáâãäåæçèéêëìíîïðñòóôõö÷øùüúþÿ");
+    $banco=remover($banco);
+    if($banco==$palavra)
+    {
+      $controle=0;
+      $idBusca=$rowBusca['id'];
+      $result= $db->query('SELECT * FROM enderecos WHERE lid='.$idBusca) or die('Query db failed1');
+    }
+  }
+  if ($controle==1)
+  {
+    $result= $db->query('SELECT * FROM enderecos') or die('Query db failed1');
+  }
+  }
+  elseif(isset($_POST['check1'])  AND isset($_POST['check2']) AND isset($_POST['check3'])  AND  isset($_POST['check4']))
   {
     $result = $db->query('SELECT * FROM enderecos WHERE gluten=1 and lactose=1 and light=1 and diet=1') or die('Query db failed1');
   }
@@ -142,7 +149,6 @@ var map=new google.maps.Map(document.getElementById("googleMap")
     $result = $db->query('SELECT * FROM enderecos ') or die('Query db failed1');
   
   }
-  //$idlocais = $db->query('SELECT locais.id,enderecos.lid,locais.nome,locais.url, locais.diet FROM enderecos, locais WHERE locais.id=enderecos.lid and enderecos.id=1') or die('Query db failed');
 
   while ($row = $result->fetchArray()){
       echo "var marker{$row['id']}=new google.maps.Marker({
@@ -178,14 +184,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 <div id="pesquisa">
     <p id="pbusca">Digite o nome do estabelecimento</p>
-    <form name=pesquisa>
-    <input type=text class="caixainput" name=caixadigi placeholder=" Digite aqui">
-    <input type=button class="botaobusca" value="Busca" onClick="Busca()">
-    </form>
-
-
+  <form action="" method="post">
+<input type="text" name="Estabelecimento"/> 
+<label><input type="submit" name="buscar" value="Busca" nClick="<?php $funcao; ?>" /></label>
+</form>
 </div>
-<div id="checkboxMapa">
+<div id="checkboxMapa" >
 <form action="mapas.php" method="post">
 <input type="checkbox" name="check1" value="1">Sem Lactose
 <input type="checkbox" name="check2" value="1">Sem Gluten
@@ -196,8 +200,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </div>
 <div id="googleMap" style="max-width:1400px; min-width:1280px; height:600px;"></div>
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 411e5b65b7e070b59c6d2d19dd4113a6c563a3b7
 <div id="cookieUsuarioMapa">
   <p id = "cookieTextoMapa">Olá <?php
         $veri = $_COOKIE['cookieNome'];
