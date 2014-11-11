@@ -50,13 +50,15 @@ $(':radio').change(
 		echo "</div>";
 		?>
 	</div>
-	<span class="star-rating">
-  <input type="radio" name="rating" value="1"><i id="item"></i>
-  <input type="radio" name="rating" value="2"><i id="item"></i>
-  <input type="radio" name="rating" value="3"><i id="item"></i>
-  <input type="radio" name="rating" value="4"><i id="item"></i>
-  <input type="radio" name="rating" value="5"><i id="item"></i>
+<div id="body">
+<span class="star-rating">
+  <input type="radio" name="rating1" value="1" id="rating"><i id="item2"></i>
+  <input type="radio" name="rating2" value="2" id="rating"><i id="item2"></i>
+  <input type="radio" name="rating3" value="3" id="rating"><i id="item2"></i>
+  <input type="radio" name="rating4" value="4" id="rating"><i id="item2"></i>
+  <input type="radio" name="rating5" value="5" id="rating"><i id="item2"></i>
 </span>
+</div>
 
 
 </body>

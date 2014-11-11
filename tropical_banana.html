@@ -4,10 +4,25 @@
 <meta charset="UTF-8">
 <link href="default.css" rel="stylesheet" type="text/css" media="all">
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-<script type="text/javascript">
-$(':radio').change(
+<script language="JavaScript">
+$(':radio').onClick(
   function(){
     $('.choice').text( this.value + ' Pimentas' );
+
+    <?php
+    
+    	$id = $_GET["id"];
+		$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
+		$statement = $db->prepare('SELECT * FROM locais WHERE id = :id;');
+		$statement->bindValue(':id', $id);
+		$result = $statement->execute();
+		$row = $result->fetchArray();
+		$var1 = $_COOKIE['cookieNome'];
+    	$var2 = $_GET["id"];
+    	$var3 = $_GET['value'];
+    	$selectQuery = $db ->query('INSERT INTO ranking (uid,lid,nota) VALUES ('.$var1','.$var2','.$var3')');
+		
+	?>
   } 
 )
 </script>
@@ -16,13 +31,6 @@ $(':radio').change(
 	</title>
 </head>
 <body>
-<script type="text/javascript">
-$(':radio').change(
-  function(){
-    $('.choice').text( this.value + ' Pimentas' );
-  } 
-)
-</script>
 	<header>
 		<a href="mapas.html"><img  style="margin-top:20px;margin-left:30px" src="icones/Logo.png"></a>
 		<a href="sobre.html"><img align="right" style="margin-top:40px;margin-right:50px" src="icones/Sobre.png"></a>
@@ -48,17 +56,25 @@ $(':radio').change(
 			
 
 			<p id="address">Av. Cristóvão Colombo, 545-Floresta;<br>Av. Diário de Notícias, 300 - Cristal;<br>Av. Assis Brasil, 2611 -Cristo Redentor<br>Diariamente, das 11:00h às 22:00h;<br>Tel: (41) 8479-2379<br>Mais informações:
-			<a href="http://www.tropicalbanana.com.br/"> Tropical Banana<br></p>
+			<a href="http://www.tropicalbanana.com.br/"> Tropical Banana<br></p></a>
 		</div>	
 	</div>
 <div id="body">
 <span class="star-rating">
-  <input type="radio" name="rating" value="1" id="rating"><i id="item"></i>
-  <input type="radio" name="rating" value="2" id="rating"><i id="item"></i>
-  <input type="radio" name="rating" value="3" id="rating"><i id="item"></i>
-  <input type="radio" name="rating" value="4" id="rating"><i id="item"></i>
-  <input type="radio" name="rating" value="5" id="rating"><i id="item"></i>
+  <input type="radio" name="rating1" value="1" id="rating"><i id="item2"></i>
+  <input type="radio" name="rating2" value="2" id="rating"><i id="item2"></i>
+  <input type="radio" name="rating3" value="3" id="rating"><i id="item2"></i>
+  <input type="radio" name="rating4" value="4" id="rating"><i id="item2"></i>
+  <input type="radio" name="rating5" value="5" id="rating"><i id="item2"></i>
 </span>
+</div>
+
+<div>
+<?php
+echo 'TESTE';
+echo nl2br("\n");
+echo $var1;
+?>
 </div>
 
 </body>
