@@ -174,7 +174,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </head>
 <body>
 <header>
-        <a href="index.php"><img  style="margin-top:20px;margin-left:30px;widht:130px;height:130px" src="icones/logo.png"></a>
+        <a href="mapas.php"><img  style="margin-top:20px;margin-left:30px;widht:130px;height:130px" src="icones/logo.png"></a>
         <a href="sobre.html"><img align="right" style="margin-top:40px;margin-right:50px" src="icones/sobre_escuro.png"></a>
         <a href="favoritos.html"><img align="right" style="margin-top:37px;margin-right:40px" src="icones/favoritos_escuro.png"></a>
         <a href="locais.php"><img align="right" style="margin-top:34px;margin-right:40px" src="icones/locais_escuro.png"></a>
@@ -200,6 +200,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </div>
 <div id="googleMap" style="max-width:1400px; min-width:1280px; height:600px;"></div>
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 411e5b65b7e070b59c6d2d19dd4113a6c563a3b7
 <div id="cookieUsuarioMapa">
   <p id = "cookieTextoMapa">Olá <?php
         $veri = $_COOKIE['cookieNome'];
