@@ -539,6 +539,14 @@ i{
     left: 900px;
     top:-50px;
 }
+
+#errodepesquisa{
+    position: relative;
+    top:-70px;
+    left:17px;
+    color:white;
+    font-size: 15px;
+}
 .caixainput{
     border: 0px;
     padding: 0;

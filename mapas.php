@@ -49,11 +49,13 @@ var map=new google.maps.Map(document.getElementById("googleMap")
       $controle=0;
       $idBusca=$rowBusca['id'];
       $result= $db->query('SELECT * FROM enderecos WHERE lid='.$idBusca) or die('Query db failed1');
+      $fail="";
     }
   }
   if ($controle==1)
   {
     $result= $db->query('SELECT * FROM enderecos') or die('Query db failed1');
+    $fail="Estabelecimento não encontrado";
   }
   }
   elseif(isset($_POST['check1'])  AND isset($_POST['check2']) AND isset($_POST['check3'])  AND  isset($_POST['check4']))
@@ -198,7 +200,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <input type="submit" name="ok" value="ok">
 </form>
 </div>
+<div id="errodepesquisa">
+  <?php echo $fail; ?>
+</div>
+
+
 <div id="googleMap" style="max-width:1400px; min-width:1280px; height:600px;"></div>
+
 
 
 <div id="cookieUsuarioMapa">
