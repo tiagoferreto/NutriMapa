@@ -78,7 +78,7 @@ $(':radio').onClick(
 			<textarea style="margin-bottom: 0px; resize:none; margin-right: 150px; font-size: 15px; font-family: 'Abel', sans-serif;" cols="100" rows="10" placeholder="Deixe aqui seu comentário!"></textarea>
 		</div>
 	
-		<div class="enviar" style = "width: 0; height: 0; padding: 0px 0 0 0px;"  > 
+		<div class="enviar" style = "width: 0; height: 0; padding: 0px 50px 0 0px;"  > 
 			<input type="submit" class="button_entrar" style = "margin-left: 882px; margin-top: 160px;" value="Post"></br>
 			<!--<input type="submit" value="Enviar" style="width:60px; height:30px;">-->
 		</div>
