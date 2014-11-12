@@ -292,6 +292,18 @@ h3{
     position: relative;
     padding-top: 0; 
  }
+
+ #cookieUsuarioLocal{
+    position: relative;
+ }
+
+ #cookieTextoLocal{
+    position: relative;
+ }
+
+ #sairLocal{
+    position: relative;
+ }
 /*------------------------------- RESTAURANTE -------------------------------*/ 
 
 .local{
