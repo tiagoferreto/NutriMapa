@@ -1,1 +1,1 @@
-{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"C:/Users/Pedro Pires/NutriMapa","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/Pedro Pires/NutriMapa","disabled":false}}}
+{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"C:/Users/Joao Fanti/Documents/GitHub/NutriMapa","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/Joao Fanti/Documents/GitHub/NutriMapa","disabled":false}}}

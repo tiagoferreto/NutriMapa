@@ -4,6 +4,7 @@ unset($_COOKIE['cookieNome']);
 setcookie('cookieNome', '', time() - 3600, "/");
 echo 'REDIRECIONANDO';
 echo nl2br("\n");
+echo "teste";
 $DB = new SQLite3('nutrimapa.sqlite') or die ('Unable to open DB');
 $selectQuery = $DB -> query('SELECT * FROM usuarios');
 while($row = $selectQuery -> fetchArray() ){
