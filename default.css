@@ -271,6 +271,11 @@ h3{
     bottom: 55px;
     font-size: 18px;
  }
+ #favoritos{
+    top: -100px;
+    position: relative;
+    padding-top: 0; 
+ }
 /*------------------------------- RESTAURANTE -------------------------------*/ 
 
 .local{
