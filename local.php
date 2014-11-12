@@ -5,9 +5,24 @@
 <link href="default.css" rel="stylesheet" type="text/css" media="all">
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 <script type="text/javascript">
-$(':radio').change(
+$(':radio').onClick(
   function(){
     $('.choice').text( this.value + ' Pimentas' );
+
+    <?php
+    
+    	$id = $_GET["id"];
+		$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
+		$statement = $db->prepare('SELECT * FROM locais WHERE id = :id;');
+		$statement->bindValue(':id', $id);
+		$result = $statement->execute();
+		$row = $result->fetchArray();
+		$var1 = $_COOKIE['cookieNome'];
+    	$var2 = $_GET["id"];
+    	$var3 = $_GET['value'];
+    	$selectQuery = $db ->query('INSERT INTO ranking (uid,lid,nota) VALUES ('.$var1','.$var2','.$var3')');
+		
+	?>
   } 
 )
 </script>
