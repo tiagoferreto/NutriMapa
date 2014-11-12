@@ -41,7 +41,7 @@
 
 		//DIV INFORMAÇÕES DA RECEITA
 		echo "<div id=\"rece_info\">";
-		echo "<h1>{$row['nome']}</h1></br>";
+		echo "<h1>{$row['nome']}</h1></br></br></br></br></br></br>";
 		echo "<p id=\"ing\">{$row['ingredientes']}</p></br>";
 		echo "<p id=\"ing\">{$row['modo_fazer']}</p></br>";
 		echo "<h2> Origem: </h2></br>";

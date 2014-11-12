@@ -106,7 +106,7 @@ body{
 
  #cookieUsuarioReceita{
     position: relative;
-    bottom: 1820px;
+    bottom: 1743px;
     left: 910px;
  }
 
@@ -144,13 +144,16 @@ p{
 }
 
 #rece_tab{
-    padding-top: 80px;
+    position: relative;
+    bottom: 120px;
+    left: 900px;
+
 }
 
 #rece_info{
     position: relative;
     left: 405px;
-    bottom: 750px;
+    bottom: 600px;
     width: 400px;
     font-family: 'Abel', sans-serif;
 }
@@ -164,7 +167,7 @@ p{
     position: relative;
     height: 200px;
     bottom: 120px;
-    top: 20px;
+    top: 200px;
 }
 #ohref{
     text-align: center;
@@ -505,6 +508,38 @@ i{
   display: inline-block;
 }
 
+.comentariosteste{
+    display: inline;
+    position:relative;
+    top: 420px;  
+    bottom: 200px;
+}
+
+.username{    
+    padding-left: 200px;
+    text-align: left;
+    font-size: 20px;
+    font-style: bold;
+}
+
+.datahora{   
+    position: relative;
+    top: -30px;
+    padding-left: 350px;
+    text-align: left;
+    font-size: 13px;
+    font-style: bold;
+}
+.comment{
+    position: relative;
+    top: -35px;
+    font-size: 15px;
+    max-width: 900px;
+    margin: 0 auto;    
+    border: solid 1.5px #0A2A12;
+    background-color: #0A2A12;
+    padding: 10px;    
+}
 
 /*--------------------------------- SOBRE -----------------------------------*/
 
