@@ -104,6 +104,11 @@ body{
     font-size: 18px;
  }
 
+ #cookieUsuarioReceita{
+    position: relative;
+    bottom: 300px;
+ }
+
 /*--------------------------------- RECEITAS ESQUELETO ----------------------------------*/
 
 h1{
