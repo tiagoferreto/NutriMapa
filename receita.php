@@ -60,7 +60,7 @@
         $row = ($selectQuery -> fetchArray());
         echo $row['nome'];
      ?>
-     ! <div id= 'sairMapa'><a href ="http://192.168.10.10/index2.php">(Sair)</a></div>
+     ! <div id= 'sairReceita'><a href ="http://192.168.10.10/index2.php">(Sair)</a></div>
    </p>
  </div>
 

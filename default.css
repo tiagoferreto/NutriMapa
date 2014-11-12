@@ -106,7 +106,18 @@ body{
 
  #cookieUsuarioReceita{
     position: relative;
-    bottom: 300px;
+    bottom: 1820px;
+    left: 910px;
+ }
+
+ #cookieTextoReceita{
+    color: black;
+ }
+
+ #sairReceita{
+    position: relative;
+    left: 300px;
+    bottom: 42px;
  }
 
 /*--------------------------------- RECEITAS ESQUELETO ----------------------------------*/
