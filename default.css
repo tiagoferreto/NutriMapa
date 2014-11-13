@@ -329,6 +329,14 @@ h3{
     bottom: 42px;
  }
 
+
+ #buttonFavorito{
+    position: relative;
+    bottom: 900px;
+    left: 1200px;
+    background-image: url("icones/estrela_claro.png") ;
+ }
+
 /*------------------------------- RESTAURANTE -------------------------------*/ 
 
 .local{
