@@ -60,66 +60,66 @@ var map=new google.maps.Map(document.getElementById("googleMap")
   }
   elseif(isset($_POST['check1'])  AND isset($_POST['check2']) AND isset($_POST['check3'])  AND  isset($_POST['check4']))
   {
-    $result = $db->query('SELECT * FROM enderecos WHERE gluten=1 and lactose=1 and light=1 and diet=1') or die('Query db failed1');
+    $result = $db->query('SELECT * FROM enderecos WHERE gluten=1 or lactose=1 or light=1 or diet=1') or die('Query db failed1');
   }
   elseif(isset($_POST['check1'])  AND isset($_POST['check2']) AND isset($_POST['check3']))
   {
 
-    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 and gluten=1 and light=1 ') or die('Query db failed1');  
+    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 or gluten=1 or light=1 ') or die('Query db failed1');  
   
   }
   elseif(isset($_POST['check2'])  AND isset($_POST['check3']) AND isset($_POST['check4']))
   {
 
-    $result = $db->query('SELECT * FROM enderecos WHERE gluten=1 and light=1 and diet=1 ') or die('Query db failed1');  
+    $result = $db->query('SELECT * FROM enderecos WHERE gluten=1 or light=1 or diet=1 ') or die('Query db failed1');  
   
   }
    elseif(isset($_POST['check1'])  AND isset($_POST['check2']) AND isset($_POST['check4']))
   {
 
-    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 and gluten=1 and diet=1 ') or die('Query db failed1');  
+    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 or gluten=1 or diet=1 ') or die('Query db failed1');  
   
   }
    elseif(isset($_POST['check1'])  AND isset($_POST['check3']) AND isset($_POST['check4']))
   {
 
-    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 and light=1 and diet=1 ') or die('Query db failed1');  
+    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 or light=1 or diet=1 ') or die('Query db failed1');  
   
   }
    elseif(isset($_POST['check1'])  AND isset($_POST['check2']))
   {
 
-    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 and gluten=1 ') or die('Query db failed1');  
+    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 or gluten=1 ') or die('Query db failed1');  
   
   }
    elseif(isset($_POST['check1'])  AND isset($_POST['check3']))
   {
 
-    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 and light=1 ') or die('Query db failed1');  
+    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 or light=1 ') or die('Query db failed1');  
   
   }
    elseif(isset($_POST['check1'])  AND isset($_POST['check4']))
   {
 
-    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 and diet=1 ') or die('Query db failed1');  
+    $result = $db->query('SELECT * FROM enderecos WHERE lactose=1 or diet=1 ') or die('Query db failed1');  
   
   }
    elseif(isset($_POST['check2'])  AND isset($_POST['check3']))
   {
 
-    $result = $db->query('SELECT * FROM enderecos WHERE gluten=1 and light=1 ') or die('Query db failed1');  
+    $result = $db->query('SELECT * FROM enderecos WHERE gluten=1 or light=1 ') or die('Query db failed1');  
   
   }
    elseif(isset($_POST['check2'])  AND isset($_POST['check4']))
   {
 
-    $result = $db->query('SELECT * FROM enderecos WHERE gluten=1 and diet=1 ') or die('Query db failed1');  
+    $result = $db->query('SELECT * FROM enderecos WHERE gluten=1 or diet=1 ') or die('Query db failed1');  
   
   }
    elseif(isset($_POST['check3'])  AND isset($_POST['check4']))
   {
 
-    $result = $db->query('SELECT * FROM enderecos WHERE light=1 and diet=1 ') or die('Query db failed1');  
+    $result = $db->query('SELECT * FROM enderecos WHERE light=1 or diet=1 ') or die('Query db failed1');  
   
   }
    elseif(isset($_POST['check1']))

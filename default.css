@@ -327,11 +327,24 @@ h3{
 #address{
     color:white;
     position: relative;
+    text-align: center;
     left:-40;
     top:70px;
     padding-bottom: 0;
 
 }
+
+#address2{
+    color:white;
+    position: relative;
+    text-align: center;
+    left:-40;
+    font-size: 17px;
+    top:50px;
+    padding-bottom: 0;
+
+}
+
 .nome{
     font-size: 18px;
     font-family: 'Abel', sans-serif;
