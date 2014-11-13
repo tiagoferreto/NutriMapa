@@ -79,5 +79,16 @@
 			}
 		?>	
 	</div>
+	<div id="cookieUsuarioLocais">
+  	<p id = "cookieTextoLocais">Olá, <?php
+        $veri = $_COOKIE['cookieNome'];
+        $nutrimapa_db = new SQLite3('nutrimapa.sqlite') or die ('Unable to open DB');
+        $selectQuery = $nutrimapa_db ->query('SELECT * FROM usuarios WHERE id = '.$veri);
+        $row = ($selectQuery -> fetchArray());
+        echo $row['nome'];
+     ?>
+     ! <div id= 'sairLocais'><a href ="http://192.168.10.10/index2.php">(Sair)</a></div>
+   </p>
+</div>
 </body>
 </html>
