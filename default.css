@@ -67,7 +67,7 @@ body{
     background-color: rgba(10, 42, 18, 0.5);
     margin-left: 80px;
     position: absolute;
-    margin-top: -20px;
+    top: -20px;
 }
 .tipo_receita p{
     color: white;
