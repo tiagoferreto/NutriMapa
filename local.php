@@ -88,8 +88,14 @@ $(':radio').onClick(
 		</div>
 	</div>
 
-		<div>
+	<div>
 		<input type="image" id="buttonFavorito" src="icones/estrela_claro.png" style ="width: 60px;">
+					
+		
+
+
+		
+
 	</div>
 
 </body>

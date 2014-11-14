@@ -188,7 +188,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <p id="pbusca">Digite o nome do estabelecimento</p>
   <form action="" method="post">
 <input type="text" name="Estabelecimento"/> 
-<label><input type="submit" name="buscar" value="Busca" nClick="<?php $funcao; ?>" /></label>
+<label><input type="submit" name="buscar" value="Busca"  /></label>
 </form>
 </div>
 <div id="checkboxMapa" >
