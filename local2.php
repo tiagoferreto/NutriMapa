@@ -89,23 +89,13 @@ $(':radio').onClick(
 	</div>
 
 	<div>
-		<input type="image" id="buttonFavorito" onClick= "favFunction();" src="icones/maca_escuro.png" style ="width: 60px;">
+		<input type="image" id="buttonFavorito" onClick= "favFunction2();" src="icones/estrela_claro.png" style ="width: 60px;">
 
 		<script type="text/javascript">
-			function favFunction(){
-				<?php 
-				$fav = 1;
-				/*
-				if($fav == 1){
-				$db ->query('INSERT INTO favoritos (uid, lid) VALUES ('$veri','$id')');
-				}
-				*/
-				?>
-
-				window.location="http://192.168.10.10/local2.php?id=<?=$id;?>";
+			function favFunction2(){
+				window.location="http://192.168.10.10/local.php?id=<?=$id;?>";
 			}
 		</script>
-
 	</div>
 
 </body>
