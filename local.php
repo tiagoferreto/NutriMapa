@@ -94,14 +94,11 @@ $(':radio').onClick(
 		<script type="text/javascript">
 			function favFunction(){
 				<?php 
-				$fav = 1;
-				/*
-				if($fav == 1){
-				$db ->query('INSERT INTO favoritos (uid, lid) VALUES ('$veri','$id')');
+				$fav = 'favorito';
+				if(isset($fav)){
+					//$db ->query('INSERT INTO favoritos (uid, lid) VALUES ('$veri','$id')');
 				}
-				*/
 				?>
-
 				window.location="http://192.168.10.10/local2.php?id=<?=$id;?>";
 			}
 		</script>
