@@ -1,3 +1,4 @@
+
 <DOCTYPE! hmtl>
 <html lang="PT-BR">
 <head>
@@ -91,15 +92,9 @@ $(':radio').onClick(
 	<div>
 		<input type="image" id="buttonFavorito" onClick= "favFunction();" src="icones/maca_escuro.png" style ="width: 60px;">
 
-		<script type="text/javascript">
+		<script language="JavaScript">
 			function favFunction(){
-				<?php 
-				$fav = 'favorito';
-				if(isset($fav)){
-					//$db ->query('INSERT INTO favoritos (uid, lid) VALUES ('$veri','$id')');
-				}
-				?>
-				window.location="http://192.168.10.10/local2.php?id=<?=$id;?>";
+				window.location="http://192.168.10.10/redireciona2.php?id=<?=$id;?>&uid=<?=$veri;?>";
 			}
 		</script>
 

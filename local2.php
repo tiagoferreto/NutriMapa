@@ -93,7 +93,7 @@ $(':radio').onClick(
 
 		<script type="text/javascript">
 			function favFunction2(){
-				window.location="http://192.168.10.10/local.php?id=<?=$id;?>";
+				window.location="http://192.168.10.10/redireciona3.php?id=<?=$id;?>";
 			}
 		</script>
 	</div>
