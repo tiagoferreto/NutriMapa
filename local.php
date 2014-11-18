@@ -30,17 +30,11 @@ if(isset($_POST['estrela_x']))
 	if($row['uid']!=null)
 	{
 		$db ->query('DELETE FROM favoritos WHERE uid='.$veri.' and lid='.$id);
-		$x="maca_escuro";
 	}
 	else
 	{
 		$db->exec('INSERT INTO favoritos(uid, lid) VALUES ('.$veri.','.$id.')');
-		$x="estrela_claro";
 	}
-}
-else
-{
-	$x="maca_escuro";
 }
 ?>
 
@@ -101,11 +95,11 @@ else
 			$result2 = $statement2->execute();
 			$row4=$result2->fetchArray();
 			if($row4['uid']!=null){
-	?>
+		?>
 	<input type="image" style="width:100px;" name="estrela" src="icones/estrela_claro.png">
 	<?php }; if($row4['uid']==null){
 	?>
-	<input type="image" style="width:100px;" name="estrela" src="icones/maca_escuro.png">
+	<input type="image" style="width:100px;" name="estrela" src="icones/estrela_branca.png">
 	<?php }; ?>
 	</div>	
 	</form>
@@ -138,20 +132,5 @@ else
 			<!--<input type="submit" value="Enviar" style="width:60px; height:30px;">-->
 		</div>
 	</div>
-
-<<<<<<< HEAD
-=======
-	<div>
-		<input type="image" id="buttonFavorito" onClick= "favFunction();" src="icones/estrela_branca.png" style ="width: 60px;">
-
-		<script language="JavaScript">
-			function favFunction(){
-				window.location="http://192.168.10.10/redireciona2.php?id=<?=$id;?>&uid=<?=$veri;?>";
-			}
-		</script>
-
-	</div>
-
->>>>>>> 3da2c3f99a55070c93605a14c72973515b3521a8
 </body>
 </html>
