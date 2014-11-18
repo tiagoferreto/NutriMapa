@@ -337,6 +337,12 @@ h3{
     background-image: url("icones/estrela_claro.png") ;
  }
 
+ #estre_fav{
+    position: relative;
+    top:-450px;
+    left: 500px;  
+ }
+
 /*------------------------------- RESTAURANTE -------------------------------*/ 
 
 .local{
