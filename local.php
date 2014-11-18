@@ -132,5 +132,21 @@ if(isset($_POST['estrela_x']))
 			<!--<input type="submit" value="Enviar" style="width:60px; height:30px;">-->
 		</div>
 	</div>
+<<<<<<< HEAD
+=======
+
+	<div>
+		<input type="image" id="buttonFavorito" onClick= "favFunction();" src="icones/estrela_branca.png" style ="width: 60px;">
+
+		<script language="JavaScript">
+			function favFunction(){
+				window.location="http://192.168.10.10/redireciona2.php?id=<?=$id;?>&uid=<?=$veri;?>";
+			}
+		</script>
+
+	</div>
+
+
+>>>>>>> 1db2901d3814b7f0093bfd2dac6071baff9d31e5
 </body>
 </html>
