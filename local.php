@@ -90,7 +90,7 @@ $(':radio').onClick(
 	</div>
 
 	<div>
-		<input type="image" id="buttonFavorito" onClick= "favFunction();" src="icones/maca_escuro.png" style ="width: 60px;">
+		<input type="image" id="buttonFavorito" onClick= "favFunction();" src="icones/estrela_branca.png" style ="width: 60px;">
 
 		<script language="JavaScript">
 			function favFunction(){

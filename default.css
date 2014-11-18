@@ -106,9 +106,14 @@ body{
     font-size: 18px;
  }
 
+
+
+
+
+
  #cookieUsuarioReceita{
     position: relative;
-    bottom: 1843px;
+    bottom: 2610px;
     left: 910px;
  }
 
@@ -207,6 +212,10 @@ a:active{
 }
 
 
+#origemUrl{
+    position: relative;
+    left: 80px;
+}
 
 
 
