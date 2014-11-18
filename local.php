@@ -139,5 +139,19 @@ else
 		</div>
 	</div>
 
+<<<<<<< HEAD
+=======
+	<div>
+		<input type="image" id="buttonFavorito" onClick= "favFunction();" src="icones/estrela_branca.png" style ="width: 60px;">
+
+		<script language="JavaScript">
+			function favFunction(){
+				window.location="http://192.168.10.10/redireciona2.php?id=<?=$id;?>&uid=<?=$veri;?>";
+			}
+		</script>
+
+	</div>
+
+>>>>>>> 3da2c3f99a55070c93605a14c72973515b3521a8
 </body>
 </html>
