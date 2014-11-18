@@ -493,6 +493,7 @@ i{
  }
 .star-rating input:hover + i,
 .star-rating input:checked + i{
+ 
   opacity: 1;
 }
  .star-rating i ~ i {
