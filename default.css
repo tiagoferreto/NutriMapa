@@ -106,9 +106,14 @@ body{
     font-size: 18px;
  }
 
+
+
+
+
+
  #cookieUsuarioReceita{
     position: relative;
-    bottom: 1843px;
+    bottom: 2610px;
     left: 910px;
  }
 
@@ -207,6 +212,10 @@ a:active{
 }
 
 
+#origemUrl{
+    position: relative;
+    left: 80px;
+}
 
 
 
@@ -335,6 +344,12 @@ h3{
     bottom: 875px;
     left: 380px;
     background-image: url("icones/estrela_claro.png") ;
+ }
+
+ #estre_fav{
+    position: relative;
+    top:-450px;
+    left: 500px;  
  }
 
 /*------------------------------- RESTAURANTE -------------------------------*/ 

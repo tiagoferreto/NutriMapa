@@ -1,4 +1,3 @@
-
 <DOCTYPE! hmtl>
 <html lang="PT-BR">
 <head>
@@ -9,6 +8,7 @@
 	<title>
 		NutriMapa
 	</title>
+	<?php 	$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');?>
 </head>
 <body>
 	<script type="text/javascript">
@@ -18,6 +18,35 @@ $(':radio').onClick(
   } 
 )
 </script>
+<?php 
+if(isset($_POST['estrela_x']))
+{
+	$id = $_GET["id"];
+	$veri=$_COOKIE['cookieNome'];
+	$statement2 = $db->prepare('SELECT * FROM favoritos WHERE uid = :usuid and lid='.$id);
+	$statement2->bindValue(':usuid', $veri);
+	$result2 = $statement2->execute();
+	$row=$result2->fetchArray();
+	if($row['uid']!=null)
+	{
+		$db ->query('DELETE FROM favoritos WHERE uid='.$veri.' and lid='.$id);
+		$x="maca_escuro";
+	}
+	else
+	{
+		$db->exec('INSERT INTO favoritos(uid, lid) VALUES ('.$veri.','.$id.')');
+		$x="estrela_claro";
+	}
+}
+else
+{
+	$x="maca_escuro";
+}
+?>
+
+
+
+
 	<header>
 		<a href="index.php"><img  style="margin-top:20px;margin-left:30px;widht:130px;height:130px" src="icones/logo.png"></a>
 		<a href="sobre.html"><img align="right" style="margin-top:40px;margin-right:50px" src="icones/sobre_escuro.png"></a>
@@ -62,6 +91,25 @@ $(':radio').onClick(
 </span>
 </div>
 
+	<form action="local.php?id=<?= $id;?>" method="post" />
+		<div id="estre_fav">
+		<?php
+			$id = $_GET["id"];
+			$veri=$_COOKIE['cookieNome'];
+			$statement2 = $db->prepare('SELECT * FROM favoritos WHERE uid = :usuid and lid='.$id);
+			$statement2->bindValue(':usuid', $veri);
+			$result2 = $statement2->execute();
+			$row4=$result2->fetchArray();
+			if($row4['uid']!=null){
+	?>
+	<input type="image" style="width:100px;" name="estrela" src="icones/estrela_claro.png">
+	<?php }; if($row4['uid']==null){
+	?>
+	<input type="image" style="width:100px;" name="estrela" src="icones/maca_escuro.png">
+	<?php }; ?>
+	</div>	
+	</form>
+
 <div id="cookieUsuarioLocal">
   	<p id = "cookieTextoLocal">Olá, <?php
         $veri = $_COOKIE['cookieNome'];
@@ -73,6 +121,8 @@ $(':radio').onClick(
      ! <div id= 'sairLocal'><a href ="http://192.168.10.10/index2.php">(Sair)</a></div>
    </p>
 </div>
+
+
 
 	<div class = "com">
 		<div class="comentario">
@@ -90,7 +140,7 @@ $(':radio').onClick(
 	</div>
 
 	<div>
-		<input type="image" id="buttonFavorito" onClick= "favFunction();" src="icones/maca_escuro.png" style ="width: 60px;">
+		<input type="image" id="buttonFavorito" onClick= "favFunction();" src="icones/estrela_branca.png" style ="width: 60px;">
 
 		<script language="JavaScript">
 			function favFunction(){
@@ -99,6 +149,7 @@ $(':radio').onClick(
 		</script>
 
 	</div>
+
 
 </body>
 </html>
