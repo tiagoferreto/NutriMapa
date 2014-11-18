@@ -292,10 +292,10 @@ h3{
 
 #cookieUsuarioLocais{
     position: relative;
-    left: 990px;
+    left: 920px;
     bottom: 5350px;
     height: 43px;
-    width: 295px;
+    width: 325px;
     color: white;
 }
 
@@ -307,7 +307,7 @@ h3{
 }
  #sairLocais{
     position: relative;
-    left: 254px;
+    left: 274px;
     bottom: 55px;
     font-size: 18px;
     color: white;
