@@ -22,8 +22,8 @@
 
 	<div id= "caixa">
 
-		<div class = "diet">
-			<p id = "iddiet">Diet</p>
+		<div class = "tipo_receita">
+			<p>Diet</p>
 			<?php
 
 				$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
@@ -40,11 +40,10 @@
 				{
 					switch ($qtd) {
 						case '0':
-						
 							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top: ".$mt."; margin-left: ".$ml.";\">";
+							echo "<div class=\"receita\" style= \"margin-top: $mt; margin-left: $ml;\">";
 							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
+							echo "<p> {$row['nome']}";
 							echo "</div>";
 							echo "</a>\n";
 							$qtd = $qtd+1;
@@ -52,45 +51,42 @@
 						break;
 						
 						case '1':
-							
 							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top:".$mt.";margin-left: ".$ml.";\">";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
 							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
+							echo "<p> {$row['nome']}";
 							echo "</div>";
 							echo "</a>\n";
 							$qtd = $qtd+1;
 							$ml = $ml + 370;
 						break;
 						case '2':
-							$qtd = $qtd+1;
-							$ml = $ml + 370;
 							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top: ".$mt.";margin-left: ".$ml.";\">";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
 							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
+							echo "<p> {$row['nome']}";
 							echo "</div>";
 							echo "</a>\n";
-						
+							$qtd = $qtd+1;
+							$ml = $ml + 370;
 						break;
 						case '3':
+							echo "<a href=\"receita.php?id={$row['id']}\" >";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
+							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
+							echo "<p> {$row['nome']}";
+							echo "</div>";
+							echo "</a>\n";
 							$qtd = 0;
 							$ml = 0;
 							$mt = $mt + 220;
-							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top: ".$mt.";margin-left: ".$ml.";\">";
-							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
-							echo "</div>";
-							echo "</a>\n";
-						
 						break;
 					}
 				}
 			?>
 		</div>
-		<div class = "light">
-			<p id = "idlight">Light</p>
+		<div class = "tipo_receita">
+			<p>Light</p>
 			<?php
 
 				$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
@@ -108,9 +104,9 @@
 					switch ($qtd) {
 						case '0':
 							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top: ".$mt."; margin-left: ".$ml.";\">";
+							echo "<div class=\"receita\" style= \"margin-top: $mt; margin-left: $ml;\">";
 							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
+							echo "<p> {$row['nome']}";
 							echo "</div>";
 							echo "</a>\n";
 							$qtd = $qtd+1;
@@ -119,9 +115,9 @@
 						
 						case '1':
 							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top: ".$mt.";margin-left: ".$ml.";\">";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
 							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
+							echo "<p> {$row['nome']}";
 							echo "</div>";
 							echo "</a>\n";
 							$qtd = $qtd+1;
@@ -129,9 +125,9 @@
 						break;
 						case '2':
 							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top: ".$mt.";margin-left: ".$ml.";\">";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
 							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
+							echo "<p> {$row['nome']}";
 							echo "</div>";
 							echo "</a>\n";
 							$qtd = $qtd+1;
@@ -139,9 +135,9 @@
 						break;
 						case '3':
 							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top: ".$mt.";margin-left: ".$ml.";\">";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
 							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
+							echo "<p> {$row['nome']}";
 							echo "</div>";
 							echo "</a>\n";
 							$qtd = 0;
@@ -156,8 +152,8 @@
 				}
 			?>
 		</div>
-		<div class = "sem_gluten">
-			<p id = "idsgluten">Sem Glúten</p>
+		<div class = "tipo_receita">
+			<p>Sem Glúten</p>
 			<?php
 
 				$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
@@ -174,9 +170,9 @@
 					switch ($qtd) {
 						case '0':
 							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top: ".$mt."; margin-left: ".$ml.";\">";
+							echo "<div class=\"receita\" style= \"margin-top: $mt; margin-left: $ml;\">";
 							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
+							echo "<p> {$row['nome']}";
 							echo "</div>";
 							echo "</a>\n";
 							$qtd = $qtd+1;
@@ -185,9 +181,9 @@
 						
 						case '1':
 							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top: ".$mt.";margin-left: ".$ml.";\">";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
 							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
+							echo "<p> {$row['nome']}";
 							echo "</div>";
 							echo "</a>\n";
 							$qtd = $qtd+1;
@@ -195,9 +191,9 @@
 						break;
 						case '2':
 							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top: ".$mt.";margin-left: ".$ml.";\">";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
 							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
+							echo "<p> {$row['nome']}";
 							echo "</div>";
 							echo "</a>\n";
 							$qtd = $qtd+1;
@@ -205,9 +201,9 @@
 						break;
 						case '3':
 							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top: ".$mt.";margin-left: ".$ml.";\">";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
 							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
+							echo "<p> {$row['nome']}";
 							echo "</div>";
 							echo "</a>\n";
 							$qtd = 0;
@@ -222,8 +218,8 @@
 				}
 			?>
 		</div>
-		<div class = "sem_lactose">
-			<p id = "idsgluten">Sem Lactose</p>
+		<div class = "tipo_receita">
+			<p>Sem Lactose</p>
 			<?php
 
 				$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
@@ -241,9 +237,9 @@
 					switch ($qtd) {
 						case '0':
 							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top: ".$mt."; margin-left: ".$ml.";\">";
+							echo "<div class=\"receita\" style= \"margin-top: $mt; margin-left: $ml;\">";
 							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
+							echo "<p> {$row['nome']}";
 							echo "</div>";
 							echo "</a>\n";
 							$qtd = $qtd+1;
@@ -252,9 +248,9 @@
 						
 						case '1':
 							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top: ".$mt.";margin-left: ".$ml.";\">";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
 							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
+							echo "<p> {$row['nome']}";
 							echo "</div>";
 							echo "</a>\n";
 							$qtd = $qtd+1;
@@ -262,9 +258,9 @@
 						break;
 						case '2':
 							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top: ".$mt.";margin-left: ".$ml.";\">";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
 							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
+							echo "<p> {$row['nome']}";
 							echo "</div>";
 							echo "</a>\n";
 							$qtd = $qtd+1;
@@ -272,9 +268,9 @@
 						break;
 						case '3':
 							echo "<a href=\"receita.php?id={$row['id']}\" >";
-							echo "<div class=\"receita\" style= \"margin-top: ".$mt.";margin-left: ".$ml.";\">";
+							echo "<div class=\"receita\" style= \"margin-top: $mt;margin-left: $ml;\">";
 							echo "<img src=\"imgreceitas/{$row['imagem']}\" width=\"250\" height=\"150\">";
-							echo "<p id = \"nomereceita\"> {$row['nome']}";
+							echo "<p> {$row['nome']}";
 							echo "</div>";
 							echo "</a>\n";
 							$qtd = 0;

@@ -79,6 +79,10 @@
 			}
 		?>	
 	</div>
+
+
+
+	
 	<div id="cookieUsuarioLocais">
   	<p id = "cookieTextoLocais">Olá, <?php
         $veri = $_COOKIE['cookieNome'];
