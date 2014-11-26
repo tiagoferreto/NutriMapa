@@ -30,17 +30,11 @@ if(isset($_POST['estrela_x']))
 	if($row['uid']!=null)
 	{
 		$db ->query('DELETE FROM favoritos WHERE uid='.$veri.' and lid='.$id);
-		$x="maca_escuro";
 	}
 	else
 	{
 		$db->exec('INSERT INTO favoritos(uid, lid) VALUES ('.$veri.','.$id.')');
-		$x="estrela_claro";
 	}
-}
-else
-{
-	$x="maca_escuro";
 }
 ?>
 
@@ -48,7 +42,7 @@ else
 
 
 	<header>
-		<a href="index.php"><img  style="margin-top:20px;margin-left:30px;widht:130px;height:130px" src="icones/logo.png"></a>
+		<a href="mapas.php"><img  style="margin-top:20px;margin-left:30px;widht:130px;height:130px" src="icones/logo.png"></a>
 		<a href="sobre.html"><img align="right" style="margin-top:40px;margin-right:50px" src="icones/sobre_escuro.png"></a>
 		<a href="favoritos.php"><img align="right" style="margin-top:37px;margin-right:40px" src="icones/favoritos_escuro.png"></a>
 		<a href="locais.php"><img align="right" style="margin-top:34px;margin-right:40px" src="icones/locais_claro.png"></a>
@@ -70,7 +64,7 @@ else
 		echo "</div>";
 		echo "<div id=\"description\">";
 		echo "<h2 id=\"textlocal\"> {$row['categoria']} </h2>";
-		echo "<p id=\"intro\">“{$row['descricao']}”<br><br><br></p>";
+		echo "<p id=\"intro\">{$row['descricao']}<br><br><br></p>";
 		while ($row2= $endereco->fetchArray()) {
 			echo "<p id=\"address\">{$row2['endereco']} -</p>";
 			echo "<p id=\"address2\">{$row2['horario']}<br><br></p>";
@@ -101,11 +95,11 @@ else
 			$result2 = $statement2->execute();
 			$row4=$result2->fetchArray();
 			if($row4['uid']!=null){
-	?>
+		?>
 	<input type="image" style="width:100px;" name="estrela" src="icones/estrela_claro.png">
 	<?php }; if($row4['uid']==null){
 	?>
-	<input type="image" style="width:100px;" name="estrela" src="icones/maca_escuro.png">
+	<input type="image" style="width:100px;" name="estrela" src="icones/estrela_branca.png">
 	<?php }; ?>
 	</div>	
 	</form>
@@ -117,6 +111,7 @@ else
         $selectQuery = $nutrimapa_db ->query('SELECT * FROM usuarios WHERE id = '.$veri);
         $row = ($selectQuery -> fetchArray());
         echo $row['nome'];
+        $nomedousuario = $row['nome'];
      ?>
      ! <div id= 'sairLocal'><a href ="http://192.168.10.10/index2.php">(Sair)</a></div>
    </p>
@@ -124,34 +119,42 @@ else
 
 
 
-	<div class = "com">
+<div class = "com">
 		<div class="comentario">
 			Comentários
 		</div>
 		
 		<div class="caixacomment"> 
-			<textarea style="margin-bottom: 0px; resize:none; margin-right: 150px; font-size: 15px; font-family: 'Abel', sans-serif;" cols="100" rows="10" placeholder="Deixe aqui seu comentário!"></textarea>
+			<textarea id="area" style="margin-bottom: 0px; resize:none; margin-right: 150px; font-size: 15px; font-family: 'Abel', sans-serif;" cols="100" rows="10" placeholder="Deixe aqui seu comentário!"></textarea>
 		</div>
-	
-		<div class="enviar" style = "width: 0; height: 0; padding: 0px 50px 0 0px;"  > 
-			<input type="submit" class="button_entrar" style = "margin-left: 882px; margin-top: 160px;" value="Post"></br>
-			<!--<input type="submit" value="Enviar" style="width:60px; height:30px;">-->
-		</div>
-	</div>
+		<div class="enviar" style = "width: 0; height: 0; padding: 0px 0px 0px 0px;"  > 
+			<input type="button" onClick='comFunction()'  class="button_entrar" style = "margin-left: 802px; margin-top: 160px;" value="Post"></br>
+			
 
-<<<<<<< HEAD
-=======
-	<div>
-		<input type="image" id="buttonFavorito" onClick= "favFunction();" src="icones/estrela_branca.png" style ="width: 60px;">
-
-		<script language="JavaScript">
-			function favFunction(){
-				window.location="http://192.168.10.10/redireciona2.php?id=<?=$id;?>&uid=<?=$veri;?>";
+			<script type="text/javascript">
+			function comFunction(){
+				window.location="http://192.168.10.10/redireciona2.php?id=<?=$id;?>&com="+document.getElementById("area").value+"&uid=<?=$veri;?>";
 			}
-		</script>
-
+			</script>
+		</div>
 	</div>
 
->>>>>>> 3da2c3f99a55070c93605a14c72973515b3521a8
+	<div class="comentarios">
+
+
+		<?php
+			$tcomentarios2 = $db ->prepare('SELECT * FROM comentarios WHERE lid = :lojaid ORDER BY numerocom DESC');
+			$tcomentarios2->bindValue(':lojaid', $id);
+			$result4 = $tcomentarios2->execute();
+			while($row5 = $result4 -> fetchArray()){
+					$idcomuser = $row5['uid'];
+					$ttcomentarios = $db ->query('SELECT * FROM usuarios WHERE id ='.$idcomuser);
+					$row6 = $ttcomentarios -> fetchArray();
+				echo "<p class=\"username\">{$row6['nome']} </p>";
+				echo "<p class=\"datahora\">{$row5['datahora']} <br></p>"; 
+				echo "<p class=\"comment\">{$row5['coment']} </p>";
+			}
+		?>
+	</div>
 </body>
 </html>
