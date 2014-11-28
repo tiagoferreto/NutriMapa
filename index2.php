@@ -45,6 +45,6 @@ document.onkeydown=enter; //Para o navegador reconhecer o comando da tecla 'ente
 	<input type=password class="caixa_inf" name=password placeholder="Senha"></br>
 	<input type=button class="button_entrar" value="Entrar" onClick="Login()"></br>
 	</form>
-</div>	
+</div>
 </body>
 </html>

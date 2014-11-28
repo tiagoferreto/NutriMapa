@@ -16,10 +16,9 @@
 		<a href="favoritos.php"><img align="right" style="margin-top:37px;margin-right:40px" src="icones/favoritos_escuro.png"></a>
 		<a href="locais.php"><img align="right" style="margin-top:34px;margin-right:40px" src="icones/locais_claro.png"></a>
 		<a href="receitas.php"><img align="right" style="margin-top:38px;margin-right:40px" src="icones/receitas_escuro.png"></a>
-		<a href="mapas.php"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/mapa_escuro.png"></a>
+		<a href="mapas.html"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/mapa_escuro.png"></a>
 	</header>
 	<!-- seção para ser gerada de forma dinâmica -->
-
 
 	<div id= "caixa_lojas">
 		<h3> Lojas</h3>
@@ -82,8 +81,10 @@
 	</div>
 
 
+
+	
 	<div id="cookieUsuarioLocais">
-  <p id = "cookieTextoLocais">Olá <?php
+  	<p id = "cookieTextoLocais">Olá, <?php
         $veri = $_COOKIE['cookieNome'];
         $nutrimapa_db = new SQLite3('nutrimapa.sqlite') or die ('Unable to open DB');
         $selectQuery = $nutrimapa_db ->query('SELECT * FROM usuarios WHERE id = '.$veri);
@@ -92,8 +93,6 @@
      ?>
      ! <div id= 'sairLocais'><a href ="http://192.168.10.10/index2.php">(Sair)</a></div>
    </p>
- </div>
-
-
+</div>
 </body>
 </html>

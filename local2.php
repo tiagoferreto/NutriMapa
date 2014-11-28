@@ -4,53 +4,33 @@
 <meta charset="UTF-8">
 <link href="default.css" rel="stylesheet" type="text/css" media="all">
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-<script type="text/javascript">
-$(':radio').onClick(
-  function(){
-    $('.choice').text( this.value + ' Pimentas' );
 
-    <?php
-    
-    	$id = $_GET["id"];
-		$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
-		$statement = $db->prepare('SELECT * FROM locais WHERE id = :id;');
-		$statement->bindValue(':id', $id);
-		$result = $statement->execute();
-		$row = $result->fetchArray();
-		$var1 = $_COOKIE['cookieNome'];
-    	$var2 = $_GET["id"];
-    	$var3 = $_GET['value'];
-    	$selectQuery = $db ->query('INSERT INTO ranking (uid,lid,nota) VALUES ('.$var1','.$var2','.$var3')');
-		
-	?>
-  } 
-)
-</script>
-<title>
+	<title>
 		NutriMapa
 	</title>
 </head>
 <body>
-<script type="text/javascript">
-$(':radio').change(
+	<script type="text/javascript">
+$(':radio').onClick(
   function(){
     $('.choice').text( this.value + ' Pimentas' );
   } 
 )
 </script>
 	<header>
-		<a href="mapas.php"><img  style="margin-top:20px;margin-left:30px;widht:130px;height:130px" src="icones/logo.png"></a>
+		<a href="index.php"><img  style="margin-top:20px;margin-left:30px;widht:130px;height:130px" src="icones/logo.png"></a>
 		<a href="sobre.html"><img align="right" style="margin-top:40px;margin-right:50px" src="icones/sobre_escuro.png"></a>
-		<a href="favoritos.html"><img align="right" style="margin-top:37px;margin-right:40px" src="icones/favoritos_escuro.png"></a>
+		<a href="favoritos.php"><img align="right" style="margin-top:37px;margin-right:40px" src="icones/favoritos_escuro.png"></a>
 		<a href="locais.php"><img align="right" style="margin-top:34px;margin-right:40px" src="icones/locais_claro.png"></a>
 		<a href="receitas.php"><img align="right" style="margin-top:38px;margin-right:40px" src="icones/receitas_escuro.png"></a>
-		<a href="mapas.php"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/mapa_escuro.png"></a>
+		<a href="mapas.html"><img align="right" style="margin-top:42px;margin-right:40px" src="icones/mapa_escuro.png"></a>
 	</header>
 	<div class="local">
 		<?php
 		$id = $_GET["id"];
 		$db = new SQLite3('nutrimapa.sqlite') or die('Unable to open database');
 		$statement = $db->prepare('SELECT * FROM locais WHERE id = :id;');
+		$endereco = $db ->query('SELECT * FROM enderecos WHERE lid ='.$id);
 		$statement->bindValue(':id', $id);
 		$result = $statement->execute();
 		$row = $result->fetchArray();
@@ -61,10 +41,16 @@ $(':radio').change(
 		echo "<div id=\"description\">";
 		echo "<h2 id=\"textlocal\"> {$row['categoria']} </h2>";
 		echo "<p id=\"intro\">“{$row['descricao']}”<br><br><br></p>";
-		echo "<p id=\"address\">{$row['endereco']}</p>";
+		while ($row2= $endereco->fetchArray()) {
+			echo "<p id=\"address\">{$row2['endereco']} -</p>";
+			echo "<p id=\"address2\">{$row2['horario']}<br><br></p>";
+		}
 		echo "</div>";
 		?>
 	</div>
+ 
+
+
 <div id="body">
 <span class="star-rating">
   <input type="radio" name="rating1" value="1" id="rating"><i id="item2"></i>
@@ -76,7 +62,7 @@ $(':radio').change(
 </div>
 
 <div id="cookieUsuarioLocal">
-  <p id = "cookieTextoLocal">Olá <?php
+  	<p id = "cookieTextoLocal">Olá, <?php
         $veri = $_COOKIE['cookieNome'];
         $nutrimapa_db = new SQLite3('nutrimapa.sqlite') or die ('Unable to open DB');
         $selectQuery = $nutrimapa_db ->query('SELECT * FROM usuarios WHERE id = '.$veri);
@@ -85,8 +71,32 @@ $(':radio').change(
      ?>
      ! <div id= 'sairLocal'><a href ="http://192.168.10.10/index2.php">(Sair)</a></div>
    </p>
- </div>
+</div>
 
+	<div class = "com">
+		<div class="comentario">
+			Comentários
+		</div>
+		
+		<div class="caixacomment"> 
+			<textarea style="margin-bottom: 0px; resize:none; margin-right: 150px; font-size: 15px; font-family: 'Abel', sans-serif;" cols="100" rows="10" placeholder="Deixe aqui seu comentário!"></textarea>
+		</div>
+	
+		<div class="enviar" style = "width: 0; height: 0; padding: 0px 50px 0 0px;"  > 
+			<input type="submit" class="button_entrar" style = "margin-left: 882px; margin-top: 160px;" value="Post"></br>
+			<!--<input type="submit" value="Enviar" style="width:60px; height:30px;">-->
+		</div>
+	</div>
+
+	<div>
+		<input type="image" id="buttonFavorito" onClick= "favFunction2();" src="icones/estrela_claro.png" style ="width: 60px;">
+
+		<script type="text/javascript">
+			function favFunction2(){
+				window.location="http://192.168.10.10/redireciona3.php?id=<?=$id;?>";
+			}
+		</script>
+	</div>
 
 </body>
 </html>
