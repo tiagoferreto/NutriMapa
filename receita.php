@@ -41,7 +41,7 @@
 
 		//DIV INFORMAÇÕES DA RECEITA
 		echo "<div id=\"rece_info\">";
-		echo "<h1>{$row['nome']}</h1></br></br><h2> Origem: </h2></br></br></br><p id = \"origemUrl\"><a href=\"{$row['origem_url']}\">{$row['nome_origem']}</p></a></br></br></br></br></br></br></br></br></br></br>";
+		echo "<h1>{$row['nome']}</h1></br></br><h2> Origem: </h2></br><p id = \"origemUrl\"><a href=\"{$row['origem_url']}\">{$row['nome_origem']}</p></a></br></br>";
 		echo "<p id=\"ing\">{$row['ingredientes']}</p></br>";
 		echo "<p id=\"ing\">{$row['modo_fazer']}</p></br>";
 		echo "</div>";
