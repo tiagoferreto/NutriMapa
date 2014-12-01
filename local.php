@@ -143,9 +143,14 @@ if(isset($_POST['estrela_x']))
 
 
 		<?php
-			$tcomentarios = $db ->query('SELECT * FROM comentarios WHERE uid ='.$veri);
-			while($row5 = $tcomentarios -> fetchArray()){
-				echo "<p class=\"username\">{$nomedousuario} </p>";
+			$tcomentarios2 = $db ->prepare('SELECT * FROM comentarios WHERE lid = :lojaid ORDER BY numerocom DESC');
+			$tcomentarios2->bindValue(':lojaid', $id);
+			$result4 = $tcomentarios2->execute();
+			while($row5 = $result4 -> fetchArray()){
+					$idcomuser = $row5['uid'];
+					$ttcomentarios = $db ->query('SELECT * FROM usuarios WHERE id ='.$idcomuser);
+					$row6 = $ttcomentarios -> fetchArray();
+				echo "<p class=\"username\">{$row6['nome']} </p>";
 				echo "<p class=\"datahora\">{$row5['datahora']} <br></p>"; 
 				echo "<p class=\"comment\">{$row5['coment']} </p>";
 			}
