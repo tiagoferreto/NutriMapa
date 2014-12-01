@@ -125,16 +125,19 @@ if(isset($_POST['estrela_x']))
 		</div>
 		
 		<div class="caixacomment"> 
-			<textarea id="area" style="margin-bottom: 0px; resize:none; margin-right: 150px; font-size: 15px; font-family: 'Abel', sans-serif;" cols="100" rows="10" placeholder="Deixe aqui seu comentário!"></textarea>
+			<textarea  id="area"  style="margin-bottom: 0px; resize:none; margin-right: 150px; font-size: 15px; font-family: 'Abel', sans-serif;" cols="100" rows="10" placeholder="Deixe aqui seu comentário!"></textarea>
 		</div>
 		<div class="enviar" style = "width: 0; height: 0; padding: 0px 0px 0px 0px;"  > 
 			<input type="button" onClick='comFunction()'  class="button_entrar" style = "margin-left: 802px; margin-top: 160px;" value="Post"></br>
 			
 
 			<script type="text/javascript">
-			function comFunction(){
-				window.location="http://192.168.10.10/redireciona2.php?id=<?=$id;?>&com="+document.getElementById("area").value+"&uid=<?=$veri;?>";
-			}
+			
+				function comFunction(){
+					window.location="http://192.168.10.10/redireciona2.php?id=<?=$id;?>&com="+document.getElementById("area").value+"&uid=<?=$veri;?>";
+					//document.getElementById("area").value = str_replace("\n", "<br>", document.getElementById("area").value); kkkkkkkkkkk errooo
+				}
+				
 			</script>
 		</div>
 	</div>
@@ -143,6 +146,7 @@ if(isset($_POST['estrela_x']))
 
 
 		<?php
+
 			$tcomentarios2 = $db ->prepare('SELECT * FROM comentarios WHERE lid = :lojaid ORDER BY numerocom DESC');
 			$tcomentarios2->bindValue(':lojaid', $id);
 			$result4 = $tcomentarios2->execute();
@@ -151,8 +155,10 @@ if(isset($_POST['estrela_x']))
 					$ttcomentarios = $db ->query('SELECT * FROM usuarios WHERE id ='.$idcomuser);
 					$row6 = $ttcomentarios -> fetchArray();
 				echo "<p class=\"username\">{$row6['nome']} </p>";
-				echo "<p class=\"datahora\">{$row5['datahora']} <br></p>"; 
-				echo "<p class=\"comment\">{$row5['coment']} </p>";
+				echo "<p class=\"datahora\">{$row5['datahora']} <br></p>";
+								
+				echo wordwrap("<p class=\"comment\">{$row5['coment']} </p>", 120, "\n", TRUE);
+				
 			}
 		?>
 	</div>

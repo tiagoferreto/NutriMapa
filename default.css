@@ -509,6 +509,8 @@ h3{
     top: 400px;
     margin: 0 auto;
 }
+
+
 .caixacomment{    
     font-family: 'Abel', sans-serif;
     color: #0A2A12;
@@ -637,7 +639,7 @@ i{
     margin: 0 auto;    
     border: solid 1.5px #0A2A12;
     background-color: #0A2A12;
-    padding: 10px;    
+    padding: 10px;  
 }
 
 .com{
